@@ -49,11 +49,12 @@ section {
     min-height:100vh;
 }
 
+/* 10x13 Portrait */
 .profile-large {
-    width:340px;
-    height:340px;
+    width:260px;
+    height:338px;
     object-fit:cover;
-    border-radius:20px;
+    border-radius:12px;
     box-shadow:0 20px 40px rgba(0,0,0,0.15);
 }
 
@@ -137,21 +138,24 @@ ul {margin-top:10px; margin-left:20px; line-height:1.6;}
     line-height:1.6;
 }
 
+/* Logos Only */
 .logo-grid {
-    display:grid;
-    grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
-    gap:40px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:60px;
+    align-items:center;
 }
 
-.logo-item {
-    font-size:20px;
-    font-weight:600;
+.logo-grid img {
+    height:55px;
+    filter:brightness(0) invert(1);
     opacity:0.85;
     transition:0.3s ease;
 }
-.logo-item:hover {
-    transform:translateY(-5px);
+.logo-grid img:hover {
     opacity:1;
+    transform:translateY(-5px);
 }
 
 /* FLOATING CIRCLES */
@@ -196,6 +200,7 @@ footer {
 <nav>
 <a href="#home">Home</a>
 <a href="#about">About</a>
+<a href="#expertise">Expertise</a>
 <a href="#experience">Experience</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -211,11 +216,11 @@ footer {
 <h3>Healthcare Operations & Insurance Specialist</h3>
 
 <p>
-Detail-oriented healthcare and administrative professional with over three years of experience supporting dental, medical, and HR operations. Specialized in insurance verification, claims coordination, documentation accuracy, and workflow optimization.
+Detail-oriented healthcare and administrative professional with over three years of experience supporting dental, medical, and HR operations.
 </p>
 
 <p>
-I help healthcare teams improve operational efficiency, reduce billing discrepancies, and enhance patient communication by ensuring accurate data management and seamless cross-team collaboration.
+I help healthcare teams improve operational efficiency, reduce billing discrepancies, and enhance patient communication through accurate documentation and streamlined workflows.
 </p>
 
 <a href="#contact" class="button">Connect With Me</a>
@@ -226,29 +231,52 @@ I help healthcare teams improve operational efficiency, reduce billing discrepan
 <section id="about">
 <h2>About Me</h2>
 <p>
-My professional background spans dental administration, healthcare operations, and recruitment support. I thrive in structured environments that require precision, regulatory compliance, and strong communication.
-<br><br>
-Over the years, I have developed expertise in eligibility verification, prior authorizations, claims follow-up, documentation review, and workflow coordination. I continuously refine my technical and operational skills to contribute measurable value to healthcare organizations and remote teams.
+My professional background spans dental administration, healthcare operations, and recruitment support. I thrive in structured environments requiring precision, compliance, and strong communication.
 </p>
 </section>
 
-<!-- BLUE TOOLS SECTION -->
+<!-- CORE EXPERTISE (RESTORED) -->
+<section id="expertise">
+<h2>Core Expertise</h2>
+
+<div class="card">
+<strong>Administrative Coordination</strong>
+<p>Workflow management, scheduling oversight, documentation accuracy, and remote operational support.</p>
+</div>
+
+<div class="card">
+<strong>Healthcare & Patient Support</strong>
+<p>Insurance eligibility verification, benefits breakdown, claims follow-up, and revenue cycle fundamentals.</p>
+</div>
+
+<div class="card">
+<strong>Documentation & Compliance</strong>
+<p>Accurate record management, EMR system usage, regulatory compliance, and data integrity monitoring.</p>
+</div>
+
+<div class="card">
+<strong>Communication & Collaboration</strong>
+<p>Professional patient and provider communication, cross-functional coordination, and process organization.</p>
+</div>
+
+</section>
+
+<!-- BLUE SYSTEMS SECTION -->
 <section class="blue-section">
 <div class="blue-content">
 <h4>Professional Tools & Platforms</h4>
 <h2>Healthcare & Administrative Systems</h2>
 <p>
-Experienced working across insurance portals, CRM systems, EMR platforms, and communication tools to ensure seamless workflow coordination and accurate documentation.
+Experienced working across CRM platforms, insurance portals, EMR systems, and productivity tools to support seamless operations.
 </p>
 
 <div class="logo-grid">
-<div class="logo-item">Salesforce</div>
-<div class="logo-item">Genesys</div>
-<div class="logo-item">Open Dental</div>
-<div class="logo-item">Microsoft Office</div>
-<div class="logo-item">MS Teams</div>
-<div class="logo-item">WhatsApp</div>
+<img src="images/salesforce.svg" alt="Salesforce">
+<img src="images/genesys.svg" alt="Genesys">
+<img src="images/open-dental.svg" alt="Open Dental">
+<img src="images/microsoft-office.svg" alt="Microsoft Office">
 </div>
+
 </div>
 
 <div class="circle circle1"></div>
@@ -263,10 +291,10 @@ Experienced working across insurance portals, CRM systems, EMR platforms, and co
 <strong>TOA Global – South Hills Dental Arts (PA)</strong>
 <p>Administrative & Insurance Support Specialist | Apr 2024 – Jan 2026</p>
 <ul>
-<li>Conducted detailed insurance eligibility verification across multiple carrier portals, ensuring accurate benefit breakdowns and minimizing billing discrepancies prior to scheduled appointments.</li>
-<li>Maintained comprehensive patient and administrative records while ensuring HIPAA compliance and cross-departmental coordination.</li>
-<li>Managed prior authorizations and facilitated timely claims resolution through proactive follow-ups with insurance providers.</li>
-<li>Provided professional patient communication support, assisting with appointment coordination and insurance clarification.</li>
+<li>Conducted comprehensive insurance eligibility verification across multiple carrier portals.</li>
+<li>Maintained compliant patient and administrative records.</li>
+<li>Facilitated prior authorizations and managed claims follow-ups.</li>
+<li>Supported patient communication and appointment coordination.</li>
 </ul>
 </div>
 
@@ -274,10 +302,20 @@ Experienced working across insurance portals, CRM systems, EMR platforms, and co
 <strong>Firstsource Solutions Ltd.</strong>
 <p>Healthcare Operations Associate | Oct 2022 – Mar 2024</p>
 <ul>
-<li>Performed detailed eligibility investigations to validate insurance coverage prior to medical services.</li>
-<li>Managed high-volume provider and insurance communications to resolve claims and documentation concerns.</li>
-<li>Monitored claims lifecycle including follow-ups, appeals submissions, and discrepancy resolution.</li>
-<li>Contributed to workflow optimization efforts to improve turnaround times and operational efficiency.</li>
+<li>Performed detailed benefits and eligibility investigations.</li>
+<li>Managed high-volume provider and insurance communications.</li>
+<li>Monitored claims lifecycle including appeals and follow-ups.</li>
+<li>Supported workflow optimization initiatives.</li>
+</ul>
+</div>
+
+<div class="card">
+<strong>Human Resources Recruitment Assistant – Freelance</strong>
+<p>Aug 2022 – Oct 2022 | United States (Remote)</p>
+<ul>
+<li>Sourced and screened candidates for U.S.-based roles.</li>
+<li>Coordinated interviews and maintained recruitment tracking systems.</li>
+<li>Managed confidential candidate documentation with high accuracy.</li>
 </ul>
 </div>
 
