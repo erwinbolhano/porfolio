@@ -3,26 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Erwin Bolhano | Administrative & Healthcare Specialist</title>
+<title>Erwin Bolhano | Admin & Healthcare Professional</title>
 
 <style>
-/* --- Global Styles --- */
+/* --- Reset & Global --- */
+* {margin:0; padding:0; box-sizing:border-box;}
 body {
-    margin: 0;
     font-family: 'Segoe UI', Arial, sans-serif;
     scroll-behavior: smooth;
-    background: linear-gradient(-45deg, #eef3f9, #dbe6f1, #cfe0f5, #f0f5fa);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
     color: #2c3e50;
+    overflow-x: hidden;
 }
 
-@keyframes gradientBG {
-    0% {background-position: 0% 50%;}
-    50% {background-position: 100% 50%;}
-    100% {background-position: 0% 50%;}
+/* --- Canvas Background --- */
+#background {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background:#eef3f9;
 }
 
+/* --- Navigation --- */
 nav {
     background: #0a3d62;
     padding: 15px;
@@ -32,111 +36,70 @@ nav {
     text-align: center;
     z-index: 10;
 }
-
 nav a {
     color: white;
     margin: 0 20px;
     text-decoration: none;
     font-weight: 600;
 }
+nav a:hover {text-decoration: underline;}
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-section {
-    padding: 120px 20px;
-    min-height: 100vh;
-    max-width: 900px;
-    margin: auto;
-}
-
-h1 {
-    margin-bottom: 10px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+/* --- Sections --- */
+section {padding:120px 20px; min-height:100vh; max-width:900px; margin:auto;}
+h1 {margin-bottom:15px;}
 
 /* --- Home Section --- */
-#home {
-    text-align: center;
-}
-
+#home {text-align:center;}
 .profile-photo {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 50%;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-    margin-bottom: 20px;
+    width:200px; height:200px;
+    object-fit:cover; border-radius:50%;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    margin-bottom:20px;
     transition: transform 0.5s ease;
-    opacity: 0;
-    transform: translateY(20px);
+    opacity:0; transform: translateY(20px);
     animation: fadeInUp 1s forwards;
 }
+.profile-photo:hover {transform: translateY(-10px) scale(1.05);}
+#home .name, #typed-title, #home p {opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards;}
+#home .name {animation-delay:0.6s; font-size:42px; font-weight:700;}
+#typed-title {animation-delay:0.9s; font-size:24px; font-weight:600; margin-bottom:15px;}
+#home p {animation-delay:1.2s; font-size:18px; max-width:600px; margin:15px auto;}
 
-.profile-photo:hover {
-    transform: translateY(-10px) scale(1.05);
+/* --- About, Expertise, Experience, Tools, Contact --- */
+#about, #experience, #expertise, #tools {background:#eaf2f8; border-radius:10px; margin-bottom:30px;}
+#contact {background:#0a3d62; color:white; border-radius:10px; padding-bottom:50px;}
+.card {
+    background:white; padding:20px; margin:20px 0;
+    border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-
-#home .name, #typed-title, #home p {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
+.card.interactive {
+    position: relative; cursor:pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.card.interactive:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.card-icon {font-size:36px; margin-bottom:10px;}
 
-#home .name { animation-delay: 0.6s; font-size: 42px; font-weight: 700; }
-#typed-title { animation-delay: 0.9s; font-size: 24px; font-weight: 600; color: #2c3e50; margin-bottom: 15px; }
-#home p { animation-delay: 1.2s; font-size: 18px; max-width: 600px; margin: 15px auto; }
+/* --- Tools Section --- */
+.tool-list {display:flex; flex-wrap:wrap; gap:15px; margin-top:15px;}
+.tool {background:white; padding:10px 15px; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1); font-weight:600; transition: transform 0.3s ease;}
+.tool:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
 
-/* --- About / Experience / Expertise / Contact --- */
-#about, #experience, #expertise {
-    background: #eaf2f8;
-    border-radius: 10px;
-}
+/* --- Buttons --- */
+.button {display:inline-block; padding:10px 20px; background:#0a3d62; color:white; text-decoration:none; border-radius:5px; margin-top:15px;}
+.button:hover {background:#074173;}
 
-#contact {
-    background: #0a3d62;
-    color: white;
-    border-radius: 10px;
-}
+/* --- Fade-in Animation --- */
+@keyframes fadeInUp {to{opacity:1; transform:translateY(0);}}
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #0a3d62;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 15px;
-}
-
-.button:hover {
-    background: #074173;
-}
-
-/* Fade In Animation */
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Lists Style */
-ul {
-    margin: 10px 0 0 20px;
-}
+/* --- Lists --- */
+ul {margin:10px 0 0 20px;}
 </style>
 </head>
 
 <body>
+
+<!-- Canvas Background -->
+<canvas id="background"></canvas>
 
 <!-- Navigation -->
 <nav>
@@ -144,54 +107,50 @@ ul {
     <a href="#about">About</a>
     <a href="#expertise">Expertise</a>
     <a href="#experience">Experience</a>
+    <a href="#tools">Tools</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<!-- Home Section -->
+<!-- Home -->
 <section id="home">
     <img src="images/profile.jpg.jpg" alt="Erwin Bolhano" class="profile-photo">
     <h1 class="name">Erwin Bolhano</h1>
     <h2 id="typed-title"></h2>
-    <p>
-        Administrative and healthcare professional with 3+ years of experience supporting operations,
-        documentation, billing, and patient services across medical and dental settings. Skilled in
-        workflow coordination, compliance, and process improvement.
-    </p>
+    <p>Administrative and healthcare professional with 3+ years of experience supporting operations, documentation, billing, and patient services. Quickly adapts to new tools and environments.</p>
 </section>
 
-<!-- About Section -->
+<!-- About -->
 <section id="about">
     <h1>About Me</h1>
-    <p>
-        I am a results-driven professional with extensive experience in healthcare and administrative support.
-        I specialize in documentation management, insurance verification, patient communication, and workflow optimization.
-        Adaptable and detail-oriented, I thrive in fast-paced environments and am open to diverse administrative and operational roles.
-    </p>
+    <p>I am a results-driven professional with experience in healthcare, dental, and administrative operations. Skilled in documentation management, insurance verification, patient communication, workflow coordination, and process improvement. Adaptable and able to thrive in diverse professional roles.</p>
 </section>
 
-<!-- Expertise Section -->
+<!-- Expertise -->
 <section id="expertise">
     <h1>Core Expertise</h1>
-    <div class="card">
+    <div class="card interactive">
+        <div class="card-icon">🗂️</div>
         <strong>Administrative Operations</strong>
         <p>Workflow coordination, process improvement, and documentation management to optimize office efficiency.</p>
     </div>
-    <div class="card">
+    <div class="card interactive">
+        <div class="card-icon">🏥</div>
         <strong>Healthcare & Dental Support</strong>
         <p>Patient record management, insurance verification, pre-authorizations, and claims follow-up.</p>
     </div>
-    <div class="card">
+    <div class="card interactive">
+        <div class="card-icon">💻</div>
         <strong>Systems & Compliance</strong>
         <p>Proficient in EMR/EHR systems, CPT/ICD-10 codes, Microsoft Office, and adherence to healthcare compliance standards.</p>
     </div>
 </section>
 
-<!-- Experience Section -->
+<!-- Experience -->
 <section id="experience">
     <h1>Professional Experience</h1>
     <div class="card">
         <strong>TOA Global – South Hills Dental Arts (PA)</strong>
-        <p>Insurance Verification Specialist | Apr 2024 – Feb 2026</p>
+        <p>Administrative & Insurance Support Specialist | Apr 2024 – Jan 2026</p>
         <ul>
             <li>Verified insurance eligibility and plan details for patients across multiple portals.</li>
             <li>Maintained accurate patient and administrative records for billing and operations.</li>
@@ -201,7 +160,7 @@ ul {
     </div>
     <div class="card">
         <strong>Firstsource Solutions Ltd.</strong>
-        <p>Healthcare Executive | Oct 2022 – Mar 2024</p>
+        <p>Healthcare Operations Associate | Oct 2022 – Mar 2024</p>
         <ul>
             <li>Performed benefits verification and eligibility checks.</li>
             <li>Managed inbound/outbound communications with providers and insurance carriers.</li>
@@ -211,12 +170,27 @@ ul {
     </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Tools & Applications -->
+<section id="tools">
+    <h1>Tools & Applications</h1>
+    <p>I am proficient with a variety of professional tools and quickly adapt to new systems:</p>
+    <div class="tool-list">
+        <div class="tool">Salesforce</div>
+        <div class="tool">Genesys</div>
+        <div class="tool">Touchtone</div>
+        <div class="tool">ADIT</div>
+        <div class="tool">Open Dental</div>
+        <div class="tool">Microsoft Office</div>
+        <div class="tool">Quick Adaptation to New Tools</div>
+    </div>
+</section>
+
+<!-- Contact -->
 <section id="contact">
     <h1>Contact</h1>
     <p>Email: <a href="mailto:erwinjade24@gmail.com" style="color:white;">erwinjade24@gmail.com</a></p>
     <p>Phone: +63 924 373 3050</p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/zcxwin/" target="_blank" style="color:white;">linkedin.com/in/zcxwin</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/zcxwin" target="_blank" style="color:white;">linkedin.com/in/zcxwin</a></p>
 </section>
 
 <!-- Typing Effect Script -->
@@ -226,27 +200,62 @@ const titles = [
   "Insurance & Billing Specialist",
   "Operations & Process Coordinator"
 ];
-
-let i = 0, j = 0, currentText = '', isDeleting = false;
-
-function type() {
-    const element = document.getElementById('typed-title');
-    if (!isDeleting && j < titles[i].length) {
-        currentText += titles[i][j];
-        j++;
-        element.innerHTML = currentText;
-    } else if (isDeleting && j > 0) {
-        currentText = currentText.slice(0, -1);
-        j--;
-        element.innerHTML = currentText;
+let i=0,j=0,currentText='',isDeleting=false;
+function type(){
+    const el=document.getElementById('typed-title');
+    if(!isDeleting && j<titles[i].length){
+        currentText+=titles[i][j]; j++;
+        el.innerHTML=currentText;
+    } else if(isDeleting && j>0){
+        currentText=currentText.slice(0,-1); j--;
+        el.innerHTML=currentText;
     } else {
-        isDeleting = !isDeleting;
-        if (!isDeleting) i = (i + 1) % titles.length;
+        isDeleting=!isDeleting;
+        if(!isDeleting) i=(i+1)%titles.length;
     }
-    setTimeout(type, isDeleting ? 50 : 150);
+    setTimeout(type, isDeleting?50:150);
+}
+type();
+</script>
+
+<!-- Animated Background Script -->
+<script>
+const canvas=document.getElementById('background');
+const ctx=canvas.getContext('2d');
+let w=canvas.width=window.innerWidth;
+let h=canvas.height=window.innerHeight;
+
+const particles=[];
+const particleCount=100;
+for(let i=0;i<particleCount;i++){
+    particles.push({
+        x:Math.random()*w,
+        y:Math.random()*h,
+        r:Math.random()*2+1,
+        dx:(Math.random()-0.5)*0.3,
+        dy:(Math.random()-0.5)*0.3
+    });
 }
 
-type();
+function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle="rgba(10,61,98,0.15)";
+        ctx.fill();
+        p.x+=p.dx; p.y+=p.dy;
+        if(p.x<0)p.x=w; if(p.x>w)p.x=0;
+        if(p.y<0)p.y=h; if(p.y>h)p.y=0;
+    });
+    requestAnimationFrame(draw);
+}
+draw();
+
+window.addEventListener('resize',()=>{
+    w=canvas.width=window.innerWidth;
+    h=canvas.height=window.innerHeight;
+});
 </script>
 
 </body>
