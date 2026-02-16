@@ -60,29 +60,29 @@ h1 {margin-bottom:15px;}
     animation: fadeInUp 1s forwards;
 }
 .profile-photo:hover {transform: translateY(-10px) scale(1.05);}
-#home .name, #typed-title, #home p {opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards;}
+#home .name, #home p {opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards;}
 #home .name {animation-delay:0.6s; font-size:42px; font-weight:700;}
-#typed-title {animation-delay:0.9s; font-size:24px; font-weight:600; margin-bottom:15px;}
-#home p {animation-delay:1.2s; font-size:18px; max-width:600px; margin:15px auto;}
+#home p {animation-delay:0.9s; font-size:18px; max-width:600px; margin:15px auto;}
 
-/* --- About, Expertise, Experience, Tools, Contact --- */
-#about, #experience, #expertise, #tools {background:#eaf2f8; border-radius:10px; margin-bottom:30px;}
-#contact {background:#0a3d62; color:white; border-radius:10px; padding-bottom:50px;}
-.card {
-    background:white; padding:20px; margin:20px 0;
-    border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);
-}
-.card.interactive {
-    position: relative; cursor:pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+/* --- About Section --- */
+#about p {max-width:600px; margin:auto; line-height:1.6; text-align:center;}
+
+/* --- Expertise Cards --- */
+.card {background:white; padding:20px; margin:20px 0; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+.card.interactive {position:relative; cursor:pointer; transition:transform 0.3s ease, box-shadow 0.3s ease;}
 .card.interactive:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
 .card-icon {font-size:36px; margin-bottom:10px;}
 
 /* --- Tools Section --- */
-.tool-list {display:flex; flex-wrap:wrap; gap:15px; margin-top:15px;}
-.tool {background:white; padding:10px 15px; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1); font-weight:600; transition: transform 0.3s ease;}
+.tool-list {display:flex; flex-wrap:wrap; gap:15px; margin-top:15px; justify-content:center;}
+.tool {display:flex; align-items:center; gap:8px; background:white; padding:10px 15px; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1); font-weight:600; transition: transform 0.3s ease;}
 .tool:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.tool img {width:24px; height:24px;}
+
+/* --- Contact Section --- */
+.contact-logos {display:flex; gap:20px; justify-content:center; margin-top:20px;}
+.contact-logos img {width:50px; height:50px; cursor:pointer; transition: transform 0.3s;}
+.contact-logos img:hover {transform: scale(1.2);}
 
 /* --- Buttons --- */
 .button {display:inline-block; padding:10px 20px; background:#0a3d62; color:white; text-decoration:none; border-radius:5px; margin-top:15px;}
@@ -95,7 +95,6 @@ h1 {margin-bottom:15px;}
 ul {margin:10px 0 0 20px;}
 </style>
 </head>
-
 <body>
 
 <!-- Canvas Background -->
@@ -115,14 +114,13 @@ ul {margin:10px 0 0 20px;}
 <section id="home">
     <img src="images/profile.jpg.jpg" alt="Erwin Bolhano" class="profile-photo">
     <h1 class="name">Erwin Bolhano</h1>
-    <h2 id="typed-title"></h2>
     <p>Administrative and healthcare professional with 3+ years of experience supporting operations, documentation, billing, and patient services. Quickly adapts to new tools and environments.</p>
 </section>
 
 <!-- About -->
 <section id="about">
     <h1>About Me</h1>
-    <p>I am a results-driven professional with experience in healthcare, dental, and administrative operations. Skilled in documentation management, insurance verification, patient communication, workflow coordination, and process improvement. Adaptable and able to thrive in diverse professional roles.</p>
+    <p>Results-driven professional with experience in healthcare, dental, administrative operations, and human resources support. Skilled in documentation, insurance verification, workflow coordination, and process improvement. Adaptable and able to thrive in diverse professional roles.</p>
 </section>
 
 <!-- Expertise -->
@@ -130,18 +128,23 @@ ul {margin:10px 0 0 20px;}
     <h1>Core Expertise</h1>
     <div class="card interactive">
         <div class="card-icon">🗂️</div>
-        <strong>Administrative Operations</strong>
-        <p>Workflow coordination, process improvement, and documentation management to optimize office efficiency.</p>
+        <strong>Administrative Coordination</strong>
+        <p>Workflow management, remote support, scheduling, and record-keeping.</p>
     </div>
     <div class="card interactive">
         <div class="card-icon">🏥</div>
-        <strong>Healthcare & Dental Support</strong>
-        <p>Patient record management, insurance verification, pre-authorizations, and claims follow-up.</p>
+        <strong>Healthcare & Patient Support</strong>
+        <p>Insurance verification, claims follow-up, patient access, and provider support.</p>
     </div>
     <div class="card interactive">
-        <div class="card-icon">💻</div>
-        <strong>Systems & Compliance</strong>
-        <p>Proficient in EMR/EHR systems, CPT/ICD-10 codes, Microsoft Office, and adherence to healthcare compliance standards.</p>
+        <div class="card-icon">📄</div>
+        <strong>Documentation & Compliance</strong>
+        <p>Healthcare documentation, CRM/EMR systems, attention to detail, and regulatory compliance.</p>
+    </div>
+    <div class="card interactive">
+        <div class="card-icon">📞</div>
+        <strong>Communication & Collaboration</strong>
+        <p>Professional phone/email communication, multi-tasking, and team coordination.</p>
     </div>
 </section>
 
@@ -168,75 +171,59 @@ ul {margin:10px 0 0 20px;}
             <li>Assisted in workflow coordination and process optimization.</li>
         </ul>
     </div>
+    <div class="card">
+        <strong>Human Resources Recruitment Assistant – Freelance</strong>
+        <p>Aug 2022 – Oct 2022 | United States (Remote)</p>
+        <ul>
+            <li>Sourced and screened candidates for U.S.-based roles.</li>
+            <li>Coordinated interviews and maintained recruitment tracking systems.</li>
+            <li>Managed candidate records and documentation with strong data accuracy.</li>
+        </ul>
+    </div>
 </section>
 
 <!-- Tools & Applications -->
 <section id="tools">
     <h1>Tools & Applications</h1>
-    <p>I am proficient with a variety of professional tools and quickly adapt to new systems:</p>
+    <p>Proficient with a variety of professional tools and quickly adapt to new systems:</p>
     <div class="tool-list">
-        <div class="tool">Salesforce</div>
-        <div class="tool">Genesys</div>
-        <div class="tool">Touchtone</div>
-        <div class="tool">ADIT</div>
-        <div class="tool">Open Dental</div>
-        <div class="tool">Microsoft Office</div>
-        <div class="tool">Quick Adaptation to New Tools</div>
+        <div class="tool"><img src="images/salesforce.png" alt="Salesforce">Salesforce</div>
+        <div class="tool"><img src="images/genesys.png" alt="Genesys">Genesys</div>
+        <div class="tool"><img src="images/touchtone.png" alt="Touchtone">Touchtone</div>
+        <div class="tool"><img src="images/adit.png" alt="ADIT">ADIT</div>
+        <div class="tool"><img src="images/opendental.png" alt="Open Dental">Open Dental</div>
+        <div class="tool"><img src="images/office.png" alt="MS Office">MS Office</div>
+        <div class="tool"><img src="images/teams.png" alt="MS Teams">MS Teams</div>
+        <div class="tool"><img src="images/whatsapp.png" alt="WhatsApp">WhatsApp</div>
+        <div class="tool"><img src="images/adapt.png" alt="Quick Adaptation">Quick Adaptation</div>
     </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
     <h1>Contact</h1>
-    <p>Email: <a href="mailto:erwinjade24@gmail.com" style="color:white;">erwinjade24@gmail.com</a></p>
-    <p>Phone: +63 924 373 3050</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/zcxwin" target="_blank" style="color:white;">linkedin.com/in/zcxwin</a></p>
+    <div class="contact-logos">
+        <a href="mailto:erwinjade24@gmail.com"><img src="images/email.png" alt="Email"></a>
+        <a href="https://linkedin.com/in/zcxwin" target="_blank"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        <a href="tel:+639243733050"><img src="images/phone.png" alt="Phone"></a>
+    </div>
 </section>
 
-<!-- Typing Effect Script -->
-<script>
-const titles = [
-  "Administrative & Healthcare Support",
-  "Insurance & Billing Specialist",
-  "Operations & Process Coordinator"
-];
-let i=0,j=0,currentText='',isDeleting=false;
-function type(){
-    const el=document.getElementById('typed-title');
-    if(!isDeleting && j<titles[i].length){
-        currentText+=titles[i][j]; j++;
-        el.innerHTML=currentText;
-    } else if(isDeleting && j>0){
-        currentText=currentText.slice(0,-1); j--;
-        el.innerHTML=currentText;
-    } else {
-        isDeleting=!isDeleting;
-        if(!isDeleting) i=(i+1)%titles.length;
-    }
-    setTimeout(type, isDeleting?50:150);
-}
-type();
-</script>
+<!-- Footer -->
+<footer style="text-align:center; padding:30px 0; font-size:14px; color:#555;">
+    © 2026 Erwin Bolhano
+</footer>
 
-<!-- Animated Background Script -->
+<!-- Background Animation Script -->
 <script>
 const canvas=document.getElementById('background');
 const ctx=canvas.getContext('2d');
 let w=canvas.width=window.innerWidth;
 let h=canvas.height=window.innerHeight;
-
 const particles=[];
-const particleCount=100;
-for(let i=0;i<particleCount;i++){
-    particles.push({
-        x:Math.random()*w,
-        y:Math.random()*h,
-        r:Math.random()*2+1,
-        dx:(Math.random()-0.5)*0.3,
-        dy:(Math.random()-0.5)*0.3
-    });
+for(let i=0;i<100;i++){
+    particles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.3,dy:(Math.random()-0.5)*0.3});
 }
-
 function draw(){
     ctx.clearRect(0,0,w,h);
     particles.forEach(p=>{
@@ -245,17 +232,12 @@ function draw(){
         ctx.fillStyle="rgba(10,61,98,0.15)";
         ctx.fill();
         p.x+=p.dx; p.y+=p.dy;
-        if(p.x<0)p.x=w; if(p.x>w)p.x=0;
-        if(p.y<0)p.y=h; if(p.y>h)p.y=0;
+        if(p.x<0)p.x=w; if(p.x>w)p.x=0; if(p.y<0)p.y=h; if(p.y>h)p.y=0;
     });
     requestAnimationFrame(draw);
 }
 draw();
-
-window.addEventListener('resize',()=>{
-    w=canvas.width=window.innerWidth;
-    h=canvas.height=window.innerHeight;
-});
+window.addEventListener('resize',()=>{w=canvas.width=window.innerWidth; h=canvas.height=window.innerHeight;});
 </script>
 
 </body>
