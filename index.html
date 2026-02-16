@@ -1,64 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erwin Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            scroll-behavior: smooth;
-        }
-        nav {
-            background: #333;
-            padding: 15px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-        }
-        nav a {
-            color: white;
-            margin: 15px;
-            text-decoration: none;
-        }
-        section {
-            padding: 100px 20px;
-            height: 100vh;
-        }
-        #home { background: #f4f4f4; }
-        #about { background: #ddd; }
-        #skills { background: #bbb; }
-        #contact { background: #999; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erwin | Healthcare Professional</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+    background: #f4f8fb;
+    color: #2c3e50;
+}
+
+nav {
+    background: #0a3d62;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    padding: 120px 20px;
+    min-height: 100vh;
+    max-width: 900px;
+    margin: auto;
+}
+
+#home {
+    text-align: center;
+}
+
+#about, #experience {
+    background: #eaf2f8;
+    border-radius: 10px;
+}
+
+#contact {
+    background: #0a3d62;
+    color: white;
+    border-radius: 10px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0a3d62;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+.button:hover {
+    background: #074173;
+}
+</style>
 </head>
+
 <body>
 
 <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#skills">Skills</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
 </nav>
 
 <section id="home">
     <h1>Erwin</h1>
-    <p>Welcome to my portfolio</p>
+    <h3>Healthcare Compliance & Clinical Support Professional</h3>
+    <p>Dedicated to regulatory excellence, patient safety, and healthcare operational efficiency.</p>
 </section>
 
 <section id="about">
     <h1>About Me</h1>
-    <p>I am building my professional portfolio.</p>
+    <p>
+        I am a healthcare-focused professional experienced in compliance monitoring,
+        documentation accuracy, and clinical workflow support. My goal is to
+        strengthen healthcare systems through structured processes and regulatory alignment.
+    </p>
 </section>
 
-<section id="skills">
-    <h1>Skills</h1>
-    <p>Add your skills here.</p>
+<section id="expertise">
+    <h1>Core Expertise</h1>
+
+    <div class="card">
+        <strong>Healthcare Compliance</strong>
+        <p>Policy implementation, regulatory documentation, and audit preparation support.</p>
+    </div>
+
+    <div class="card">
+        <strong>Clinical Operations Support</strong>
+        <p>Workflow coordination, documentation review, and patient-centered process improvement.</p>
+    </div>
+
+    <div class="card">
+        <strong>Quality & Risk Management</strong>
+        <p>Risk assessment participation, incident review support, and safety compliance initiatives.</p>
+    </div>
+
+</section>
+
+<section id="experience">
+    <h1>Professional Experience</h1>
+
+    <div class="card">
+        <strong>Compliance Documentation Review</strong>
+        <p>Supported internal compliance audits and ensured adherence to healthcare regulatory standards.</p>
+    </div>
+
+    <div class="card">
+        <strong>Operational Support</strong>
+        <p>Improved administrative efficiency and assisted healthcare teams in documentation accuracy.</p>
+    </div>
+
 </section>
 
 <section id="contact">
     <h1>Contact</h1>
-    <p>Your email here.</p>
+    <p>Email: your@email.com</p>
+    <p>LinkedIn: linkedin.com/in/yourprofile</p>
 </section>
 
 </body>
