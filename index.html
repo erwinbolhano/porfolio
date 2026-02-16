@@ -1,423 +1,264 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Erwin Bolhano | Healthcare Operations & Administrative Specialist</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erwin Bolhano | Admin & Healthcare Professional</title>
 
 <style>
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* --- Reset & Global --- */
+* {margin:0; padding:0; box-sizing:border-box;}
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f4f7fb;
-  color: #2c3e50;
-  scroll-behavior: smooth;
-  line-height: 1.6;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    scroll-behavior: smooth;
+    color: #2c3e50;
+    overflow-x: hidden;
 }
 
-/* NAVIGATION */
+/* --- Canvas Background --- */
+#background {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    background:#eef3f9;
+}
+
+/* --- Navigation --- */
 nav {
-  background: #0a3d62;
-  padding: 12px 20px;
-  text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+    background: #0a3d62;
+    padding: 15px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    text-align: center;
+    z-index: 10;
 }
-
 nav a {
-  color: #fff;
-  margin: 0 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: color 0.2s;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
 }
+nav a:hover {text-decoration: underline;}
 
-nav a:hover {
-  color: #74b9ff;
-}
+/* --- Sections --- */
+section {padding:120px 20px; min-height:100vh; max-width:900px; margin:auto;}
+h1 {margin-bottom:15px;}
 
-/* SECTION */
-section {
-  padding: 100px 40px 80px;
-  max-width: 1100px;
-  margin: auto;
+/* --- Home Section --- */
+#home {text-align:center;}
+.profile-photo {
+    width:200px; height:200px;
+    object-fit:cover; border-radius:50%;
+    box-shadow:0 6px 18px rgba(0,0,0,0.2);
+    margin-bottom:20px;
+    transition: transform 0.5s ease;
+    opacity:0; transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
 }
+.profile-photo:hover {transform: translateY(-10px) scale(1.05);}
+#home .name, #home p {opacity:0; transform:translateY(20px); animation:fadeInUp 1s forwards;}
+#home .name {animation-delay:0.6s; font-size:42px; font-weight:700;}
+#home p {animation-delay:0.9s; font-size:18px; max-width:650px; margin:15px auto; line-height:1.6;}
 
-/* HERO */
-#home {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  min-height: 100vh;
-  padding-top: 100px; /* account for sticky nav */
-}
+/* --- About Section --- */
+#about p {max-width:650px; margin:auto; line-height:1.6; text-align:center; font-size:18px;}
 
-.profile-large {
-  max-width: 100%;
-  height: auto;
-  border-radius: 14px;
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  flex-shrink: 0;
-}
+/* --- Expertise & Experience Cards --- */
+.card {background:white; padding:20px; margin:20px 0; border-radius:10px; box-shadow:0 4px 12px rgba(0,0,0,0.08); opacity:0; transform:translateY(30px); transition: all 0.6s ease-out;}
+.card.interactive {position:relative; cursor:pointer; transition:transform 0.3s ease, box-shadow 0.3s ease;}
+.card.interactive:hover {transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2);}
+.card-icon {font-size:36px; margin-bottom:10px;}
 
-.home-text {
-  max-width: 600px;
-  flex: 1 1 400px;
-}
+/* --- Tools Section --- */
+.tool-list {display:flex; flex-wrap:wrap; gap:20px; margin-top:15px; justify-content:center;}
+.tool {display:flex; align-items:center; gap:12px; background:white; padding:12px 18px; border-radius:8px; box-shadow:0 3px 8px rgba(0,0,0,0.1); font-weight:600; opacity:0; transform:translateY(30px); transition: all 0.6s ease-out;}
+.tool:hover {transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.tool img {width:36px; height:36px;}
 
-.home-text h1 {
-  font-size: 48px;
-  margin-bottom: 6px;
-}
+/* --- Contact Section --- */
+.contact-logos {display:flex; gap:30px; justify-content:center; margin-top:20px;}
+.contact-logos img {width:60px; height:60px; cursor:pointer; transition: transform 0.3s;}
+.contact-logos img:hover {transform: scale(1.2);}
 
-.home-text h3 {
-  color: #0a3d62;
-  margin-bottom: 20px;
-  font-weight: 600;
-}
+/* --- Footer --- */
+footer {text-align:center; padding:30px 0; font-size:14px; color:#555;}
 
-.home-text p {
-  margin-bottom: 15px;
-  font-size: 18px;
-  color: #34495e;
-}
+/* --- Buttons --- */
+.button {display:inline-block; padding:10px 20px; background:#0a3d62; color:white; text-decoration:none; border-radius:5px; margin-top:15px;}
+.button:hover {background:#074173;}
 
-.home-text p:last-child {
-  margin-bottom: 40px;
-  font-style: italic;
-  color: #2c3e50;
-}
+/* --- Fade-in Animation --- */
+@keyframes fadeInUp {to{opacity:1; transform:translateY(0);}}
 
-.button {
-  display: inline-block;
-  padding: 12px 25px;
-  background: #0a3d62;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.button:hover {
-  background: #074173;
-}
-
-/* ABOUT SECTION */
-#about {
-  max-width: 700px;
-  margin: 40px auto 100px;
-  text-align: left;
-}
-
-#about h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-  font-weight: 700;
-  color: #0a3d62;
-}
-
-#about p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #2c3e50;
-}
-
-/* CORE EXPERTISE */
-#expertise {
-  max-width: 1100px;
-  margin: auto;
-}
-
-#expertise h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-  font-weight: 700;
-  color: #0a3d62;
-  text-align: center;
-}
-
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.card, .experience-card {
-  padding: 20px;
-  border-radius: 12px;
-  background: #fff;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover, .experience-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-}
-
-.card strong {
-  display: block;
-  margin-bottom: 12px;
-  font-size: 20px;
-  color: #0a3d62;
-}
-
-/* TOOLS */
-#tools {
-  max-width: 1100px;
-  margin: 80px auto 120px;
-}
-
-#tools h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-  font-weight: 700;
-  color: #0a3d62;
-  text-align: center;
-}
-
-.tools-grid {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-}
-
-.tools-grid img {
-  height: 60px;
-  filter: brightness(0) invert(1);
-  opacity: 0.85;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  cursor: default;
-}
-
-.tools-grid img:hover {
-  opacity: 1;
-  transform: translateY(-5px);
-}
-
-/* EXPERIENCE */
-#experience {
-  max-width: 1100px;
-  margin: auto 0 120px;
-}
-
-#experience h2 {
-  font-size: 36px;
-  margin-bottom: 30px;
-  font-weight: 700;
-  color: #0a3d62;
-  text-align: center;
-}
-
-.experience-card strong {
-  font-size: 20px;
-  color: #0a3d62;
-  display: block;
-  margin-bottom: 8px;
-}
-
-.experience-card p {
-  font-weight: 600;
-  color: #34495e;
-  margin-bottom: 12px;
-}
-
-.experience-card ul {
-  margin-left: 20px;
-  list-style-type: disc;
-  color: #2c3e50;
-}
-
-.experience-card ul li {
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-/* CONTACT FOOTER */
-#contact-footer {
-  background: #0a3d62;
-  color: white;
-  padding: 40px 20px;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.contact-info {
-  font-size: 16px;
-  line-height: 1.5;
-}
-
-.contact-info p {
-  margin-bottom: 6px;
-}
-
-.contact-logos {
-  display: flex;
-  gap: 30px;
-  align-items: center;
-}
-
-.contact-logos img {
-  height: 40px;
-  filter: brightness(0) invert(1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-
-.contact-logos img:hover {
-  transform: scale(1.2);
-}
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  #home {
-    flex-direction: column;
-    padding-top: 80px;
-  }
-  .profile-large {
-    width: 230px;
-    height: auto;
-  }
-  .home-text {
-    max-width: 100%;
-  }
-  #contact-footer {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
+/* --- Lists --- */
+ul {margin:10px 0 0 20px; line-height:1.5;}
 </style>
 </head>
-
 <body>
+
+<!-- Canvas Background -->
+<canvas id="background"></canvas>
+
+<!-- Navigation -->
 <nav>
-  <a href="#home">Home</a>
-  <a href="#about">About</a>
-  <a href="#expertise">Expertise</a>
-  <a href="#experience">Experience</a>
-  <a href="#contact-footer">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
 </nav>
 
-<!-- HERO -->
+<!-- Home -->
 <section id="home">
-  <img src="images/profile.jpg.jpg" alt="Erwin Bolhano" class="profile-large" />
-  <div class="home-text">
-    <h1>Erwin Bolhano</h1>
-    <h3>Healthcare Operations & Administrative Specialist</h3>
-    <p>I help healthcare teams improve workflow efficiency, reduce insurance-related errors, and maintain accurate documentation across dental and medical environments.</p>
-    <p>With over three years of experience in insurance verification, claims coordination, and administrative support, I bring structure to complex systems and clarity to patient communication.</p>
-    <p>Detail-oriented. Process-driven. Reliable.</p>
-    <p>Because behind every successful healthcare operation is someone making sure the details are done right.</p>
-  </div>
+    <img src="images/profile.jpg" alt="Erwin Bolhano" class="profile-photo">
+    <h1 class="name">Erwin Bolhano</h1>
+    <p>Healthcare and administrative professional with 3+ years of experience in dental, medical, and HR support. Skilled in insurance verification, documentation, and operational workflows. Quickly adapts to new tools and environments to optimize processes and support teams effectively.</p>
 </section>
 
-<!-- ABOUT -->
+<!-- About -->
 <section id="about">
-  <h2>About Me</h2>
-  <p>I began my career supporting healthcare and dental operations where precision and timeliness directly impact both patient experience and financial outcomes.</p>
-  <p>Through hands-on experience in insurance verification, claims follow-up, and documentation management, I developed a deep understanding of how administrative excellence supports clinical care.</p>
-  <p>I thrive in structured, compliance-driven environments where attention to detail matters. Whether coordinating with providers, insurance carriers, or patients, I focus on clarity, accountability, and operational efficiency.</p>
-  <p>I am continuously refining my technical and administrative skills to contribute long-term value to healthcare organizations — especially in remote and hybrid environments.</p>
+    <h1>About Me</h1>
+    <p>I am a versatile professional with experience in healthcare, dental, administrative, and human resources support. I excel at improving workflows, ensuring accurate documentation, handling insurance verification, and maintaining compliance. Known for attention to detail, clear communication, and adaptability across tools and systems.</p>
 </section>
 
-<!-- CORE EXPERTISE -->
+<!-- Expertise -->
 <section id="expertise">
-  <h2>Core Expertise</h2>
-  <div class="expertise-grid">
-    <div class="card">
-      <strong>Administrative Coordination</strong>
-      <p>Workflow management, scheduling oversight, documentation accuracy, and remote operational support.</p>
+    <h1>Core Expertise</h1>
+    <div class="card interactive">
+        <div class="card-icon">🗂️</div>
+        <strong>Administrative Coordination</strong>
+        <p>Workflow management, scheduling, data entry, record-keeping, and remote support.</p>
     </div>
-    <div class="card">
-      <strong>Healthcare & Patient Support</strong>
-      <p>Insurance eligibility verification, benefits breakdown, claims follow-up, and revenue cycle fundamentals.</p>
+    <div class="card interactive">
+        <div class="card-icon">🏥</div>
+        <strong>Healthcare & Patient Support</strong>
+        <p>Insurance eligibility & benefits verification, claims follow-up, patient access, provider support, and RCM fundamentals.</p>
     </div>
-    <div class="card">
-      <strong>Documentation & Compliance</strong>
-      <p>Accurate record management, EMR system usage, regulatory compliance, and data integrity monitoring.</p>
+    <div class="card interactive">
+        <div class="card-icon">📄</div>
+        <strong>Documentation & Compliance</strong>
+        <p>Healthcare documentation, CRM/EMR systems, attention to detail, and regulatory compliance.</p>
     </div>
-    <div class="card">
-      <strong>Communication & Collaboration</strong>
-      <p>Professional patient and provider communication, cross-functional coordination, and process organization.</p>
+    <div class="card interactive">
+        <div class="card-icon">📞</div>
+        <strong>Communication & Collaboration</strong>
+        <p>Professional phone/email communication, multi-tasking, team collaboration, and process organization.</p>
     </div>
-  </div>
 </section>
 
-<!-- TOOLS -->
-<section id="tools">
-  <h2>Professional Tools & Platforms</h2>
-  <div class="tools-grid">
-    <img src="images/salesforce.svg" alt="Salesforce" title="Salesforce" />
-    <img src="images/genesys.svg" alt="Genesys" title="Genesys" />
-    <img src="images/open-dental.svg" alt="Open Dental" title="Open Dental" />
-    <img src="images/microsoft-office.svg" alt="Microsoft Office" title="Microsoft Office" />
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
+<!-- Experience -->
 <section id="experience">
-  <h2>Professional Experience</h2>
-
-  <div class="experience-card">
-    <strong>TOA Global – South Hills Dental Arts (PA)</strong>
-    <p>Administrative & Insurance Support Specialist | Apr 2024 – Jan 2026</p>
-    <ul>
-      <li>Conducted detailed insurance eligibility verification across multiple carrier portals, ensuring accurate benefit breakdowns and minimizing billing discrepancies before patient appointments.</li>
-      <li>Maintained and updated comprehensive patient records, ensuring data accuracy, HIPAA compliance, and seamless coordination between clinical and administrative teams.</li>
-      <li>Managed prior authorizations and facilitated timely claims resolution by proactively communicating with insurance providers and tracking claim status updates.</li>
-      <li>Provided professional patient communication support, assisting with appointment coordination, insurance clarification, and general inquiries to enhance overall patient experience.</li>
-    </ul>
-  </div>
-
-  <div class="experience-card">
-    <strong>Firstsource Solutions Ltd.</strong>
-    <p>Healthcare Operations Associate | Oct 2022 – Mar 2024</p>
-    <ul>
-      <li>Performed detailed eligibility and benefits investigations, ensuring accurate coverage validation prior to medical service delivery.</li>
-      <li>Managed high-volume inbound and outbound communications with providers and insurance carriers to resolve documentation and claims-related concerns.</li>
-      <li>Monitored claims lifecycle, including follow-ups, appeals submissions, and discrepancy resolution to reduce processing delays.</li>
-      <li>Assisted in workflow optimization initiatives to improve team productivity and turnaround times.</li>
-    </ul>
-  </div>
-
-  <div class="experience-card">
-    <strong>Freelance Human Resources Recruitment Assistant</strong>
-    <p>Aug 2022 – Oct 2022 | United States (Remote)</p>
-    <ul>
-      <li>Conducted structured candidate sourcing and preliminary screening aligned with client role requirements.</li>
-      <li>Coordinated interviews across multiple time zones while maintaining organized tracking systems.</li>
-      <li>Maintained confidential recruitment records with high accuracy and documentation compliance.</li>
-    </ul>
-  </div>
+    <h1>Professional Experience</h1>
+    <div class="card">
+        <strong>TOA Global – South Hills Dental Arts (PA)</strong>
+        <p>Administrative & Insurance Support Specialist | Apr 2024 – Jan 2026</p>
+        <ul>
+            <li>Verified insurance eligibility and plan details across multiple portals.</li>
+            <li>Maintained accurate patient and administrative records.</li>
+            <li>Coordinated authorizations and claims resolution.</li>
+            <li>Supported patient communications and appointment coordination.</li>
+        </ul>
+    </div>
+    <div class="card">
+        <strong>Firstsource Solutions Ltd.</strong>
+        <p>Healthcare Operations Associate | Oct 2022 – Mar 2024</p>
+        <ul>
+            <li>Performed benefits verification and eligibility checks.</li>
+            <li>Managed inbound/outbound communications with providers and insurance carriers.</li>
+            <li>Followed up on claims, appeals, and documentation.</li>
+            <li>Assisted in workflow coordination and process optimization.</li>
+        </ul>
+    </div>
+    <div class="card">
+        <strong>Human Resources Recruitment Assistant – Freelance</strong>
+        <p>Aug 2022 – Oct 2022 | United States (Remote)</p>
+        <ul>
+            <li>Sourced and screened candidates for U.S.-based roles.</li>
+            <li>Coordinated interviews and maintained recruitment tracking systems.</li>
+            <li>Managed candidate records and documentation with high accuracy.</li>
+        </ul>
+    </div>
 </section>
 
-<!-- CONTACT & FOOTER -->
-<footer id="contact-footer">
-  <div class="contact-info">
-    <h2>Contact</h2>
-    <p>Phone: +63 924 373 3050</p>
-    <p>Email: erwinjade24@gmail.com</p>
-    <p>© 2026, All rights reserved</p>
-  </div>
-  <div class="contact-logos">
-    <img src="images/linkedin.svg" alt="LinkedIn" title="LinkedIn" />
-    <img src="images/email.svg" alt="Email" title="Email" />
-    <img src="images/phone.svg" alt="Phone" title="Phone" />
-  </div>
+<!-- Tools & Applications -->
+<section id="tools">
+    <h1>Tools & Applications</h1>
+    <p>Proficient with professional tools and quickly adapt to new systems:</p>
+    <div class="tool-list">
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Salesforce_logo.svg" alt="Salesforce">Salesforce</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Genesys_logo.svg" alt="Genesys">Genesys</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/3/35/Touchtone_logo.png" alt="Touchtone">Touchtone</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/4/47/ADIT_logo.png" alt="ADIT">ADIT</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Open_Dental_logo.png" alt="Open Dental">Open Dental</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_Office_logo_%282019%E2%80%93present%29.svg" alt="MS Office">MS Office</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Microsoft_teams_%282019%E2%80%93present%29.svg" alt="MS Teams">MS Teams</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">WhatsApp</div>
+        <div class="tool"><img src="https://upload.wikimedia.org/wikipedia/commons/8/81/Adaptation_icon.png" alt="Quick Adaptation">Quick Adaptation</div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+    <h1>Contact</h1>
+    <div class="contact-logos">
+        <a href="mailto:erwinjade24@gmail.com"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Mail_Icon.png" alt="Email"></a>
+        <a href="https://www.linkedin.com/in/zcxwin/" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn"></a>
+        <a href="tel:+639243733050"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Phone_font_awesome.svg" alt="Phone"></a>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    © 2026 Erwin Bolhano | Designed by Est Chuchu
 </footer>
+
+<!-- Background Animation Script -->
+<script>
+const canvas=document.getElementById('background');
+const ctx=canvas.getContext('2d');
+let w=canvas.width=window.innerWidth;
+let h=canvas.height=window.innerHeight;
+const particles=[];
+for(let i=0;i<100;i++){
+    particles.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.3,dy:(Math.random()-0.5)*0.3});
+}
+function draw(){
+    ctx.clearRect(0,0,w,h);
+    particles.forEach(p=>{
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle="rgba(10,61,98,0.15)";
+        ctx.fill();
+        p.x+=p.dx; p.y+=p.dy;
+        if(p.x<0)p.x=w; if(p.x>w)p.x=0; if(p.y<0)p.y=h; if(p.y>h)p.y=0;
+    });
+    requestAnimationFrame(draw);
+}
+draw();
+window.addEventListener('resize',()=>{w=canvas.width=window.innerWidth; h=canvas.height=window.innerHeight;});
+</script>
+
+<!-- Scroll Reveal Script -->
+<script>
+function revealOnScroll(){
+    const elements = document.querySelectorAll('.card, .tool');
+    const windowBottom = window.innerHeight;
+    elements.forEach(el=>{
+        const elementTop = el.getBoundingClientRect().top;
+        if(elementTop < windowBottom - 50){
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 
 </body>
 </html>
