@@ -154,11 +154,8 @@ footer {text-align:center; padding:40px; background:#ffffff; font-size:14px; col
             <h3>Firstsource Solutions Ltd.</h3>
             <p><strong>Healthcare Executive</strong> | 2022 – 2024</p>
             <ul>
-                <li>Managed high-volume inbound and outbound calls with U.S. healthcare providers and insurance companies.
-                </li>
-                <li>Assisted with claims status inquiries, appeals follow-ups, authorization checks, and eligibility verification.
-                </li>
-    
+                <li>Managed high-volume inbound and outbound calls with U.S. healthcare providers and insurance companies.</li>
+                <li>Assisted with claims status inquiries, appeals follow-ups, authorization checks, and eligibility verification.</li>
             </ul>
         </div>
         <div class="card">
@@ -215,3 +212,27 @@ footer {text-align:center; padding:40px; background:#ffffff; font-size:14px; col
         </div>
     </div>
 </section>
+
+<footer>
+    © 2026 Erwin Bolhano | Dental Administrative & Insurance Operations Professional
+</footer>
+
+<!-- Scroll Animation -->
+<script>
+function revealOnScroll(){
+    const elements = document.querySelectorAll('.card, .hero-text, .hero-image');
+    const windowBottom = window.innerHeight;
+    elements.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < windowBottom - 50){
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+            </html>
