@@ -8,10 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
 /* --- Reset --- */
 * {margin:0; padding:0; box-sizing:border-box;}
-
 body {
     font-family: 'Inter', sans-serif;
     background:#f4f7fb;
@@ -33,311 +31,194 @@ nav {
     box-shadow:0 2px 10px rgba(0,0,0,0.05);
     z-index:100;
 }
-
-nav .logo {
-    font-weight:800;
-    font-size:18px;
-    letter-spacing:1px;
-    color:#0a3d62;
-}
-
-nav a {
-    margin-left:30px;
-    text-decoration:none;
-    color:#34495e;
-    font-weight:600;
-    font-size:14px;
-}
-
-nav a:hover {
-    color:#0a3d62;
-}
+nav .logo {font-weight:800; font-size:18px; letter-spacing:1px; color:#0a3d62;}
+nav a {margin-left:30px; text-decoration:none; color:#34495e; font-weight:600; font-size:14px; letter-spacing:0.5px;}
+nav a:hover {color:#0a3d62;}
 
 /* --- Sections --- */
-section {
-    padding:140px 60px;
-    max-width:1200px;
-    margin:auto;
-}
+section {padding:140px 60px; max-width:1200px; margin:auto;}
+section h2 {font-size:34px; font-weight:800; margin-bottom:50px; color:#0a3d62;}
 
-section h2 {
-    font-size:34px;
-    font-weight:800;
-    margin-bottom:50px;
-    color:#0a3d62;
-}
+/* --- HERO SECTION --- */
+#home {min-height:100vh; display:flex; align-items:center; justify-content:space-between; gap:80px;}
+.hero-text {flex:1; opacity:0; transform:translateY(30px); animation:fadeInUp 1s forwards;}
+.hero-text h1 {font-size:64px; font-weight:800; line-height:1.05; margin-bottom:30px; color:#0a3d62;}
+.hero-text h2 {font-size:22px; font-weight:600; margin-bottom:20px; color:#5c6b7a;}
+.hero-text p {font-size:18px; line-height:1.8; margin-bottom:20px; max-width:600px; color:#34495e;}
+.cta-btn {display:inline-block; margin-top:20px; padding:14px 30px; background:#0a3d62; color:white; text-decoration:none; border-radius:6px; font-weight:600; letter-spacing:0.5px; transition:0.3s ease;}
+.cta-btn:hover {background:#062c47;}
+.hero-image img {width:420px; height:420px; object-fit:cover; border-radius:12px; box-shadow:0 20px 50px rgba(0,0,0,0.15); opacity:0; transform:translateY(30px); animation:fadeInUp 1s forwards; animation-delay:0.3s;}
 
-/* --- HERO --- */
-#home {
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:80px;
-}
-
-.hero-text {
-    flex:1;
-    opacity:0;
-    transform:translateY(30px);
-    animation:fadeInUp 1s forwards;
-}
-
-.hero-text h1 {
-    font-size:64px;
-    font-weight:800;
-    margin-bottom:30px;
-    color:#0a3d62;
-}
-
-.hero-text h2 {
-    font-size:22px;
-    font-weight:600;
-    margin-bottom:20px;
-}
-
-.hero-text p {
-    font-size:18px;
-    line-height:1.8;
-    margin-bottom:20px;
-}
-
-.cta-btn {
-    display:inline-block;
-    margin-top:20px;
-    padding:14px 30px;
-    background:#0a3d62;
-    color:white;
-    text-decoration:none;
-    border-radius:6px;
-}
-
-.cta-btn:hover {
-    background:#062c47;
-}
-
-.hero-image img {
-    width:420px;
-    height:420px;
-    object-fit:cover;
-    border-radius:12px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.15);
-    opacity:0;
-    transform:translateY(30px);
-    animation:fadeInUp 1s forwards;
-    animation-delay:0.3s;
-}
-
-/* --- Cards --- */
-.card {
-    background:white;
-    padding:35px;
-    border-radius:10px;
-    margin-bottom:30px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    opacity:0;
-    transform:translateY(30px);
-    transition:0.6s;
-}
-
-.cards-container {
-    display:flex;
-    flex-wrap:wrap;
-    gap:20px;
-}
+/* --- CARDS --- */
+.card {background:white; padding:35px; border-radius:10px; margin-bottom:30px; box-shadow:0 10px 30px rgba(0,0,0,0.05); opacity:0; transform:translateY(30px); transition:all 0.6s ease-out;}
+.card h3 {font-size:20px; margin-bottom:15px;}
+.card p, .card ul {font-size:16px; line-height:1.7; color:#4a5a6a;}
+.cards-container {display:flex; flex-wrap:wrap; gap:20px;}
+.cards-container .card {flex:1 1 280px; cursor:pointer; transition:transform 0.3s; text-align:center;}
+.cards-container .card:hover {transform:translateY(-5px);}
 
 /* --- Footer --- */
-footer {
-    text-align:center;
-    padding:40px;
-    background:#ffffff;
-    font-size:14px;
-    color:#7b8a97;
-}
+footer {text-align:center; padding:40px; background:#ffffff; font-size:14px; color:#7b8a97;}
 
-/* --- Footer Icons Animation --- */
-.footer-icons img {
-    opacity:0;
-    transform:translateY(15px);
-    animation:footerFadeIn 0.8s ease forwards;
-}
-
-.footer-icons img:nth-child(1){animation-delay:0.2s;}
-.footer-icons img:nth-child(2){animation-delay:0.4s;}
-.footer-icons img:nth-child(3){animation-delay:0.6s;}
-
-@keyframes footerFadeIn {
-    to {
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* --- Animation --- */
-@keyframes fadeInUp {
-    to {
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
+/* --- Animations --- */
+@keyframes fadeInUp {to{opacity:1; transform:translateY(0);}}
 </style>
 </head>
 <body>
 
-
-<!-- NAV -->
+<!-- NAVIGATION -->
 <nav>
-
-<div class="logo">ERWIN BOLHANO</div>
-
-<div>
-<a href="#home">Home</a>
-<a href="#expertise">Expertise</a>
-<a href="#experience">Experience</a>
-<a href="#education">Education</a>
-<a href="#why-hire">Why Hire Me</a>
-</div>
-
+    <div class="logo">ERWIN BOLHANO</div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#why-hire">Why Hire Me</a>
+        <a href="#contact">Contact</a>
+    </div>
 </nav>
-
 
 <!-- HERO -->
 <section id="home">
-
-<div class="hero-text">
-
-<h1>Your Operations<br>Are My Priority.</h1>
-
-<h2>Dental Administrative & Insurance Operations Professional</h2>
-
-<p>
-Skilled in high-volume insurance eligibility verification for <strong>50+ patients daily</strong>
-and managing <strong>200+ claims weekly</strong> to reduce claims aging and improve workflow efficiency.
-</p>
-
-<a href="#" class="cta-btn">Let’s Connect</a>
-
-</div>
-
-<div class="hero-image">
-<img src="images/profile.jpg.jpg">
-</div>
-
+    <div class="hero-text">
+        <h1>Your Operations<br>Are My Priority.</h1>
+        <h2>Dental Administrative & Insurance Operations Professional</h2>
+        <p>
+            Skilled in high-volume insurance eligibility verification for <strong>50+ patients daily, including scheduled, walk-in, and emergency cases</strong>, and managing <strong>200+ claims weekly</strong> to support timely processing and reduce claims aging.  
+            Experienced in Open Dental, ADIT EHR, Salesforce, and dental insurance portals, with a strong focus on documentation accuracy, compliance, and reliable support across multiple dental practice locations.
+        </p>
+        <a href="#contact" class="cta-btn">Let’s Connect</a>
+    </div>
+    <div class="hero-image">
+        <img src="images/profile.jpg.jpg" alt="Erwin Bolhano">
+    </div>
 </section>
-
 
 <!-- EXPERTISE -->
 <section id="expertise">
-
-<h2>CORE EXPERTISE</h2>
-
-<div class="cards-container">
-
-<div class="card">
-Insurance Eligibility Verification
-</div>
-
-<div class="card">
-Claims Follow-Up & Aging Management
-</div>
-
-<div class="card">
-Documentation & Compliance
-</div>
-
-<div class="card">
-Multi-Clinic Support
-</div>
-
-<div class="card">
-Open Dental, ADIT EHR, Salesforce
-</div>
-
-</div>
-
+    <h2>CORE EXPERTISE</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>INSURANCE ELIGIBILITY VERIFICATION</h3>
+            <p>Verify insurance for 50+ patients daily, including scheduled, walk-in, and emergency visits. Confirm coverage details, benefits, limitations, and patient responsibility through dental insurance portals.</p>
+        </div>
+        <div class="card">
+            <h3>CLAIMS FOLLOW-UP & AGING MANAGEMENT</h3>
+            <p>Manage 200+ claims weekly, monitoring status, coordinating with insurers, and reducing claims aging.</p>
+        </div>
+        <div class="card">
+            <h3>DOCUMENTATION & COMPLIANCE</h3>
+            <p>Maintain accurate, HIPAA-compliant records with ~99% documentation accuracy for patient and insurance data.</p>
+        </div>
+        <div class="card">
+            <h3>MULTI-CLINIC SUPPORT</h3>
+            <p>Provide administrative and insurance verification support across 5 dental practice locations, ensuring workflow consistency and operational efficiency.</p>
+        </div>
+        <div class="card">
+            <h3>SYSTEMS PROFICIENCY</h3>
+            <p>Open Dental, ADIT EHR, Salesforce, and dental insurance portals.</p>
+        </div>
+    </div>
 </section>
-
 
 <!-- EXPERIENCE -->
 <section id="experience">
-
-<h2>PROFESSIONAL EXPERIENCE</h2>
-
-<div class="cards-container">
-
-<div class="card">
-TOA Global – Insurance Verification Specialist
-</div>
-
-<div class="card">
-Firstsource Solutions – Healthcare Executive
-</div>
-
-</div>
-
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>TOA Global – South Hills Dental Arts </h3>
+            <p><strong>Insurance Verification Specialist</strong> | 2024 – 2026</p>
+            <ul>
+                <li>Verified insurance eligibility for 50+ patients daily, including scheduled, walk-in, and emergency visits.</li>
+                <li>Managed 200+ claims weekly to reduce claims aging and ensure timely processing.</li>
+                <li>Maintained accurate, HIPAA-compliant documentation (~99% accuracy).</li>
+                <li>Supported insurance operations across 5 dental clinic locations.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Firstsource Solutions Ltd.</h3>
+            <p><strong>Healthcare Executive</strong> | 2022 – 2024</p>
+            <ul>
+                <li>Managed high-volume inbound and outbound calls with U.S. healthcare providers and insurance companies.</li>
+                <li>Assisted with claims status inquiries, appeals follow-ups, authorization checks, and eligibility verification.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Freelance Human Resources Recruitment Assistant</h3>
+            <p>Aug 2022 – Oct 2022 | United States (Remote)</p>
+            <ul>
+                <li>Structured candidate sourcing and preliminary screening.</li>
+                <li>Coordinated interviews across multiple time zones.</li>
+                <li>Maintained confidential recruitment records accurately.</li>
+            </ul>
+        </div>
+    </div>
 </section>
-
 
 <!-- EDUCATION -->
 <section id="education">
-
-<h2>EDUCATION</h2>
-
-<div class="card">
-Bachelor of Secondary Education – Mathematics
-</div>
-
+    <h2>EDUCATION</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Bachelor of Secondary Education – Major in Mathematics</h3>
+            <p>2018 – 2022 | Central Philippines State University</p>
+        </div>
+    </div>
 </section>
 
-
-<!-- WHY HIRE -->
+<!-- WHY HIRE ME -->
 <section id="why-hire">
-
-<h2>WHY HIRE ME</h2>
-
-<div class="card">
-
-Reliable, detail-oriented healthcare operations professional with proven experience supporting dental practices.
-
-</div>
-
+    <h2>WHY HIRE ME</h2>
+    <div class="cards-container">
+        <div class="card">
+            <p>
+                Proven Dental Administrative and Insurance Operations Professional with hands-on experience verifying <strong>50+ patient insurances daily</strong> and managing <strong>200+ claims weekly</strong> in high-volume dental practice environments.  
+                Highly experienced in Open Dental, Salesforce, and dental insurance portals, supporting multiple clinic locations with accuracy and consistency.
+            </p>
+            <p>
+                Recognized for strong attention to detail, ~<strong>99% documentation accuracy</strong>, and a reliable remote work record with consistent attendance. Committed to compliance, reducing claims aging, and ensuring efficient insurance coordination to support smooth dental operations.
+            </p>
+        </div>
+    </div>
 </section>
 
+<!-- CONTACT -->
+<section id="contact">
+    <h2>CONTACT</h2>
+    <div style="max-width:400px; margin:0 auto; text-align:left; display:flex; flex-direction:column; gap:10px;">
+        <div style="cursor:pointer;" onclick="window.location='tel:+639243733050'" title="Phone">
+            <strong>Phone:</strong> +63 924 373 3050
+        </div>
+        <div style="cursor:pointer;" onclick="window.location='mailto:erwinjade24@gmail.com'" title="Email">
+            <strong>Email:</strong> erwinjade24@gmail.com
+        </div>
+        <div style="cursor:pointer;" onclick="window.open('https://www.linkedin.com/in/zcxwin/', '_blank')" title="LinkedIn">
+            <strong>LinkedIn</strong>
+        </div>
+    </div>
+</section>
 
-
-<!-- FOOTER WITH ICONS -->
 <footer>
-
-<div class="footer-icons"
-style="display:flex; justify-content:center; gap:25px; margin-bottom:15px;">
-
-<img src="icons/phone.png"
-onclick="window.location='tel:+639243733050'"
-style="width:28px; cursor:pointer; transition:0.2s;"
-onmouseover="this.style.transform='scale(1.2)'"
-onmouseout="this.style.transform='scale(1)'">
-
-
-<img src="icons/gmail.png"
-onclick="window.location='mailto:erwinjade24@gmail.com'"
-style="width:28px; cursor:pointer; transition:0.2s;"
-onmouseover="this.style.transform='scale(1.2)'"
-onmouseout="this.style.transform='scale(1)'">
-
-
-<img src="icons/linkedin.png"
-onclick="window.open('https://www.linkedin.com/in/zcxwin/')"
-style="width:28px; cursor:pointer; transition:0.2s;"
-onmouseover="this.style.transform='scale(1.2)'"
-onmouseout="this.style.transform='scale(1)'">
-
-</div>
-
-© 2026 Erwin Bolhano | Dental Administrative & Insurance Operations Professional
-
+    © 2026 Erwin Bolhano | Dental Administrative & Insurance Operations Professional
 </footer>
 
+<!-- Scroll Animation -->
+<script>
+function revealOnScroll(){
+    const elements = document.querySelectorAll('.card, .hero-text, .hero-image');
+    const windowBottom = window.innerHeight;
+    elements.forEach(el=>{
+        const top = el.getBoundingClientRect().top;
+        if(top < windowBottom - 50){
+            el.style.opacity = 1;
+            el.style.transform = "translateY(0)";
+        }
+    });
+}
+window.addEventListener('scroll', revealOnScroll);
+window.addEventListener('load', revealOnScroll);
+</script>
 
 </body>
 </html>
