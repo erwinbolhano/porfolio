@@ -1,672 +1,204 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  
-<head>  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7JZ164EDM0"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Erwin Bolhano | Dental Operations Professional</title>
 
-  gtag('config', 'G-7JZ164EDM0');
-</script>
-  <meta charset="utf-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  
-  <title> YN | Medical Virtual Assistant </title>  
-  <meta name="description" content="HIPAA-compliant Medical Virtual Assistant." />  
-  
-  <!-- ✅ Fonts -->  
-  <link rel="preconnect" href="https://fonts.googleapis.com">  
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">  
-  
-  <!-- ✅ CSS -->  
-  <link rel="stylesheet" href="styles.css" />  
-  <link  
-  rel="stylesheet"  
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"  
-  crossorigin="anonymous"  
-/>  
-</head>  
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
+<style>
+/* --- Reset --- */
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+    font-family: 'Inter', sans-serif;
+    background:#f4f7fb;
+    color:#1f2d3d;
+    scroll-behavior:smooth;
+    overflow-x:hidden;
+}
+
+/* --- Navigation --- */
+nav {
+    background:#ffffff;
+    padding:20px 60px;
+    position:fixed;
+    width:100%;
+    top:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    z-index:100;
+}
+nav .logo {font-weight:800; font-size:18px; letter-spacing:1px; color:#0a3d62;}
+nav a {margin-left:30px; text-decoration:none; color:#34495e; font-weight:600; font-size:14px; letter-spacing:0.5px;}
+nav a:hover {color:#0a3d62;}
+
+/* --- Sections --- */
+section {padding:140px 60px; max-width:1200px; margin:auto;}
+section h2 {font-size:34px; font-weight:800; margin-bottom:50px; color:#0a3d62;}
+
+/* --- HERO SECTION --- */
+#home {min-height:100vh; display:flex; align-items:center; justify-content:space-between; gap:80px;}
+.hero-text {flex:1; opacity:0; transform:translateY(30px); animation:fadeInUp 1s forwards;}
+.hero-text h1 {font-size:64px; font-weight:800; line-height:1.05; margin-bottom:30px; color:#0a3d62;}
+.hero-text h2 {font-size:22px; font-weight:600; margin-bottom:20px; color:#5c6b7a;}
+.hero-text p {font-size:18px; line-height:1.8; margin-bottom:20px; max-width:600px; color:#34495e;}
+.cta-btn {display:inline-block; margin-top:20px; padding:14px 30px; background:#0a3d62; color:white; text-decoration:none; border-radius:6px; font-weight:600; letter-spacing:0.5px; transition:0.3s ease;}
+.cta-btn:hover {background:#062c47;}
+.hero-image img {width:420px; height:420px; object-fit:cover; border-radius:12px; box-shadow:0 20px 50px rgba(0,0,0,0.15); opacity:0; transform:translateY(30px); animation:fadeInUp 1s forwards; animation-delay:0.3s;}
+
+/* --- CARDS (FIXED - NOW VISIBLE) --- */
+.card {
+    background:white;
+    padding:35px;
+    border-radius:10px;
+    margin-bottom:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+.card h3 {font-size:20px; margin-bottom:15px;}
+.card p, .card ul {font-size:16px; line-height:1.7; color:#4a5a6a;}
+.cards-container {display:flex; flex-wrap:wrap; gap:20px;}
+.cards-container .card {flex:1 1 280px; cursor:pointer; transition:transform 0.3s; text-align:center;}
+.cards-container .card:hover {transform:translateY(-5px);}
+
+/* --- Footer --- */
+footer {text-align:center; padding:40px; background:#ffffff; font-size:14px; color:#7b8a97;}
+
+/* --- Animations --- */
+@keyframes fadeInUp {to{opacity:1; transform:translateY(0);}}
+</style>
+</head>
 <body>
-  <!-- NAV -->
-  <header class="site-header" id="nav">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Home">
-        <span class="brand-mark">YN</span>
-      </a>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#home">Home</a>  
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#why-outsource">Why Outsource Prior Auth</a>
+<!-- NAVIGATION -->
+<nav>
+    <div class="logo">ERWIN BOLHANO</div>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#expertise">Expertise</a>
         <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>  
-      </nav>
-
-      <a class="nav-cta" href="#contact">Let's Connect</a>
+        <a href="#education">Education</a>
+        <a href="#why-hire">Why Hire Me</a>
+        <a href="#contact">Contact</a>
     </div>
-  </header>
+</nav>
 
-  <main id="Top">
-    <!-- HERO -->
-    <section id="home" class="hero">  
-      <div class="container hero-wrap">
-        <div class="hero-left">
-          <div class="badges reveal">
-            <span class="badge">• US Healthcare Experience</span>
-            <span class="badge">• HIPAA Certified</span>
-          </div>
+<!-- HERO -->
+<section id="home">
+    <div class="hero-text">
+        <h1>Your Operations<br>Are My Priority.</h1>
+        <h2>Dental Administrative & Insurance Operations Professional</h2>
+        <p>
+            Skilled in high-volume insurance eligibility verification for <strong>50+ patients daily, including scheduled, walk-in, and emergency cases</strong>, and managing <strong>200+ claims weekly</strong> to support timely processing and reduce claims aging.  
+            Experienced in Open Dental, ADIT EHR, Salesforce, and dental insurance portals, with a strong focus on documentation accuracy, compliance, and reliable support across multiple dental practice locations.
+        </p>
+        <a href="#contact" class="cta-btn">Let’s Connect</a>
+    </div>
+    <div class="hero-image">
+        <img src="images/profile.jpg.jpg" alt="Erwin Bolhano">
+    </div>
+</section>
 
-          <h1 class="reveal">
-            Prior Authorization Support for Pain Management Practices<br/>
-          </h1>
-
-          <p class="lead reveal">
-            </p>
-          Helping Interventional Pain Management clinics reduce authorization delays, prevent avoidable denials, and keep procedure schedules on track.
-          </p>
-           </p> 
-          Dedicated prior authorization support for spine, joint, nerve, and advanced pain procedures across Medicare, Medicaid, and commercial payers.
-          </p>
-          </p>
-
-          <div class="hero-actions reveal">
-            <a class="btn primary" href="#contact">Get Prior Authorization Support</a>
-          </div>
-
-          <div class="hero-metrics">
-            <div class="metric reveal reveal-delay-1">
-              <div class="metric-top">
-                <span class="dot"></span>
-                <strong>Faster Approvals</strong>
-              </div>
-              <p>Streamlined, payer‑aligned submissions</p>
-            </div>
-
-            <div class="metric reveal reveal-delay-2">
-              <div class="metric-top">
-                <span class="dot"></span>
-                <strong>Reduced Denials</strong>
-              </div>
-              <p>Accurate documentation & policy compliance</p>
-            </div>
-
-            <div class="metric reveal reveal-delay-3">
-              <div class="metric-top">
-                <span class="dot"></span>
-                <strong>US Time-Zone Aligned</strong>
-              </div>
-              <p>Available during clinic hours</p>
-            </div>
-
-            <div class="metric reveal">
-              <div class="metric-top">
-                <span class="dot"></span>
-                <strong>HIPAA Compliant</strong>
-              </div>
-              <p>Secure, confidential workflows</p>
-            </div>
-          </div>
+<!-- EXPERTISE -->
+<section id="expertise">
+    <h2>CORE EXPERTISE</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>INSURANCE ELIGIBILITY VERIFICATION</h3>
+            <p>Verify insurance for 50+ patients daily, including scheduled, walk-in, and emergency visits. Confirm coverage details, benefits, limitations, and patient responsibility through dental insurance portals.</p>
         </div>
+        <div class="card">
+            <h3>CLAIMS FOLLOW-UP & AGING MANAGEMENT</h3>
+            <p>Manage 200+ claims weekly, monitoring status, coordinating with insurers, and reducing claims aging.</p>
+        </div>
+        <div class="card">
+            <h3>DOCUMENTATION & COMPLIANCE</h3>
+            <p>Maintain accurate, HIPAA-compliant records with ~99% documentation accuracy for patient and insurance data.</p>
+        </div>
+        <div class="card">
+            <h3>MULTI-CLINIC SUPPORT</h3>
+            <p>Provide administrative and insurance verification support across 5 dental practice locations, ensuring workflow consistency and operational efficiency.</p>
+        </div>
+        <div class="card">
+            <h3>SYSTEMS PROFICIENCY</h3>
+            <p>Open Dental, ADIT EHR, Salesforce, and dental insurance portals.</p>
+        </div>
+    </div>
+</section>
 
-        <aside class="hero-right">
-          <div class="profile-card reveal">
-            <div class="profile-top">
-  <img
-    class="avatar"
-    src="profile.jfif"
-    alt="Profile photo"
-    onclick="openImageModal(this.src)"
-  />
-  <div class="profile-text">
-    <h2>Your Name Here</h2>
-    <p class="role">Certified Medical Virtual Assistant</p>
-    <p class="subrole">Prior Authorization Specialist</p>
-  </div>
+<!-- EXPERIENCE -->
+<section id="experience">
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>TOA Global – South Hills Dental Arts</h3>
+            <p><strong>Insurance Verification Specialist</strong> | 2024 – 2026</p>
+            <ul>
+                <li>Verified insurance eligibility for 50+ patients daily, including scheduled, walk-in, and emergency visits.</li>
+                <li>Managed 200+ claims weekly to reduce claims aging and ensure timely processing.</li>
+                <li>Maintained accurate, HIPAA-compliant documentation (~99% accuracy).</li>
+                <li>Supported insurance operations across 5 dental clinic locations.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Firstsource Solutions Ltd.</h3>
+            <p><strong>Healthcare Executive</strong> | 2022 – 2024</p>
+            <ul>
+                <li>Managed high-volume inbound and outbound calls with U.S. healthcare providers and insurance companies.</li>
+                <li>Assisted with claims status inquiries, appeals follow-ups, authorization checks, and eligibility verification.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>Freelance Human Resources Recruitment Assistant</h3>
+            <p>Aug 2022 – Oct 2022 | United States (Remote)</p>
+            <ul>
+                <li>Structured candidate sourcing and preliminary screening.</li>
+                <li>Coordinated interviews across multiple time zones.</li>
+                <li>Maintained confidential recruitment records accurately.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+    <h2>EDUCATION</h2>
+    <div class="cards-container">
+        <div class="card">
+            <h3>Bachelor of Secondary Education – Major in Mathematics</h3>
+            <p>2018 – 2022 | Central Philippines State University</p>
+        </div>
+    </div>
+</section>
+
+<!-- WHY HIRE ME -->
+<section id="why-hire">
+    <h2>WHY HIRE ME</h2>
+    <div class="cards-container">
+        <div class="card">
+            <p>
+                Proven Dental Administrative and Insurance Operations Professional with hands-on experience verifying <strong>50+ patient insurances daily</strong> and managing <strong>200+ claims weekly</strong> in high-volume dental practice environments.
+            </p>
+            <p>
+                Recognized for strong attention to detail, ~<strong>99% documentation accuracy</strong>, and a reliable remote work record with consistent attendance.
+            </p>
+        </div>
+    </div>
+</section>
+
+<footer>
+<div class="footer-icons" style="display:flex; justify-content:center; gap:25px;">
+<img src="icons/phone.png" onclick="window.location.href='tel:+639243733050'" style="width:28px; cursor:pointer;">
+<img src="icons/gmail.png" onclick="window.location.href='mailto:erwinjade24@gmail.com'" style="width:28px; cursor:pointer;">
+<img src="icons/linkedin.png" onclick="window.open('https://www.linkedin.com/in/zcxwin/', '_blank')" style="width:28px; cursor:pointer;">
 </div>
 
-            <div class="profile-cta">
-  <a class="btn small" href="Sample-Certificate.jfif" target="_blank" rel="noopener">Resume</a>
-  <a class="btn small" href="Sample-Certificate.jfif" target="_blank" rel="noopener">COE</a>             
-  <a class="btn small" href="Sample-Certificate.jfif" target="_blank" rel="noopener">HIPAA Certificate</a>
-  <a class="btn small" href="Sample-Certificate.jfif" target="_blank" rel="noopener">Medical VA Certificate</a>
-  <a class="btn small" href="Sample-Certificate.jfif" target="_blank" rel="noopener">Healthcare Compliance</a>
-</div>
-            <div class="profile-info">
-              <div class="info-row">
-                <span>Location</span>
-                <strong>Cebu City, Philippines</strong>
-              </div>
-              <div class="info-row">
-                <span>Availability</span>
-                <strong>Remote | US Healthcare</strong>
-              </div>
-            </div>
-
-            <div class="profile-links">
-            <a class="link-chip" href="mailto:sample@gmail.com?subject=Prior%20Authorization%20Support%20Inquiry&body=Hi%20%2C%0A%0AI%27m%20reaching%20out%20about%20prior%20authorization%20support%20for%20our%20clinic.%0A%0AClinic%20Name%3A%20%0APayers%3A%20%0ATypical%20Procedures%3A%20%0AEHR%3A%20%0APreferred%20contact%20time%3A%20%0A%0AThanks%2C%0A">Email</a>
-              <a class="link-chip" href="https://wa.me/639917706058" target="_blank" rel="noopener">WhatsApp</a>
-              <a class="link-chip" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-            </div>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="container">
-        <div class="section-head reveal center">
-          <p class="kicker">ABOUT ME</p>
-          <h2>Your Dedicated Prior Authorization Partner</h2>
-          <p class="section-sub">  
+<p style="margin-top:20px;">
+© 2026 Erwin Bolhano | Dental Administrative & Insurance Operations Professional
 </p>
-I help Pain Management clinics prevent revenue loss caused by insurance delays and denials.  
-Years of US healthcare experience, I take full ownership of prior authorizations for spine, joint,  
-nerve, and advanced pain procedures across Medicare, Medicaid, and commercial payers.
-        </p> 
-</p>
-From insurance verification and LCD/NCD-aligned submissions to follow-ups, appeals, and peer-to-peer coordination,  
-I ensure faster approvals and uninterrupted procedure schedules — always 100% HIPAA compliant.
-        </p> 
-</p>
-       </div>
-        <div class="grid-4">
-          <div class="card reveal">
-            <h3>Dedicated Ownership</h3>
-            <p>Single point of contact for all authorizations</p>
-          </div>
-          <div class="card reveal">
-            <h3>LCD / NCD Aligned</h3>
-            <p>Medicare‑compliant submissions</p>
-          </div>
-          <div class="card reveal">
-            <h3>Payer Follow‑Ups</h3>
-            <p>No lost or stalled authorizations</p>
-          </div>
-          <div class="card reveal">
-            <h3>Appeals & Peer‑to‑Peer</h3>
-            <p>Handled end‑to‑end</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="section alt">
-      <div class="container">
-        <div class="section-head reveal center">
-          <p class="kicker">WHAT I DO</p>
-          <h2>How I Support Your Pain Management Practice</h2>
-          <p class="section-sub">
-            Comprehensive prior authorization support for a wide range of pain management procedures
-          </p>
-        </div>
-
-        <div class="grid-2">
-          <article class="card big reveal">
-            <h3>Prior Authorization & Utilization Management</h3>
-            <p>• End‑to‑End Prior Authorization Management.</p>
-            <p>• Procedure & Medication Prior Authorizations.</p>
-            <p>• Retro Authorizations.</p>
-            <p>• Authorization Tracking & Follow‑Ups.</p>
-            <p>• Frequency & Coverage Limitation Monitoring.</p>
-          </article>
-
-          <article class="card big reveal">
-            <h3>Interventional Pain Management Specialization</h3>
-            <p>• Spine, Joint, Nerve & Advanced Pain Procedures</p>
-            <p>• Pain Management Workflow Optimization.</p>
-            <p>• Procedure History Review & Compliance.</p>
-            <p>• Coordination with Providers & Clinical Staff.</p>
-          </article>
-
-          <article class="card big reveal">
-            <h3>Insurance Verification</h3>
-            <p>• Eligibility Verification.</p>
-            <p>• Benefits & Coverage Analysis.</p>
-            <p>• Cost‑Sharing & Patient Responsibility Review.</p>
-            <p>• Plan Limitations & Exclusions Identification.</p>
-          </article>
-
-          <article class="card big reveal">
-            <h3>Denial Prevention & Appeals</h3>
-            <p>• Proactive Denial Prevention Strategies.</p>
-            <p>• Authorization Denial Analysis.</p>
-            <p>• Appeal Letter Preparation.</p>
-            <p>• Overturned Denial Management.</p>
-            <p>• Payer Reconsiderations.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-<!-- WHY OUTSOURCE PRIOR AUTH -->  
-<section id="why-outsource" class="section">  
-  <div class="container">  
-    <div class="section-head reveal center">  
-      <p class="kicker">WHY OUTSOURCE</p>  
-      <h2>Why Pain Management Practices Outsource Prior Authorization</h2>  
-      <p class="section-sub">
-        </p>
-        Prior authorizations in pain management are complex, time-sensitive, and highly payer-specific.  
-        Many clinics outsource this function to avoid delays, denials, and disrupted schedules. 
-      </p>
-      </p>
-        When handled inconsistently or without dedicated ownership, authorizations often result in delays, denials, and lost revenue.
-      </p>
-      </p>  
-    </div>  
-  
-    <div class="grid-2">  
-      <div class="card big reveal">  
-        <h3>For Practice Owners</h3>  
-        <ul class="list">  
-          <li>Protect revenue by reducing avoidable denials</li>  
-          <li>Keep provider schedules full and predictable</li>  
-          <li>Avoid last-minute cancellations</li>  
-          <li>Reduce staffing strain and burnout</li>  
-        </ul>  
-      </div>  
-  
-      <div class="card big reveal">  
-        <h3>For Office Managers & Administrators</h3>  
-        <ul class="list">  
-          <li>Clear authorization backlogs faster</li>  
-          <li>Reduce daily payer phone calls</li>  
-          <li>Minimize patient frustration</li>  
-          <li>Improve coordination between clinical and scheduling teams</li>  
-        </ul>  
-      </div>  
-    </div>  
-  
-    <div class="card reveal" style="margin-top:2rem;">  
-      <h3>Real-World Example (HIPAA-Safe)</h3>  
-      <p>  
-        A multi-provider pain management clinic experienced frequent procedure delays and denials due to  
-        missing documentation and missed frequency limits.  
-      </p>  
-      <p>  
-        After assigning a dedicated prior authorization specialist, procedure history was reviewed before submission,  
-        LCD/NCD and payer rules were applied consistently, and authorization status was tracked daily.  
-      </p>  
-      <p>  
-        </p>
-        <strong>Results:</strong> Fewer rescheduled procedures, faster approvals, and smoother clinic operations  
-        — without increasing staff workload.  
-      </p>
-      </p>  
-    </div>  
-  </div>  
-</section>  
-    <!-- EXPERIENCE -->
-    <section id="experience" class="section">
-      <div class="container">
-        <div class="section-head reveal center">
-          <p class="kicker">CAREER</p>
-          <h2>Professional Experience</h2>
-        </div>
-
-        <div class="stack">
-          <div class="job reveal">
-            <div class="job-head">
-              <div>
-                <h3>Prior Authorization Specialist – Interventional Pain Management</h3>
-                <p class="meta">East Carolina Anesthesia Associates | Southeast Pain &amp; Spine Care • via Homesourced Inc.</p>
-                <p class="meta">Remote | US Healthcare</p>
-              </div>
-              <span class="pill">January 2025 – February 2026</span>
-            </div>
-            <ul>  
-  <li>Owned end-to-end prior authorization workflows for interventional pain management procedures and medications across Medicare, Medicaid, Tricare, and major commercial payers</li>  
-  <li>Prepared and submitted LCD/NCD- and payer-aligned authorization requests for spine, joint, nerve, and advanced pain procedures</li>  
-  <li>Reviewed clinical documentation to ensure medical necessity, frequency compliance, and payer-specific coverage criteria prior to submission</li>  
-  <li>Applied accurate CPT, ICD-10, and modifier usage based on payer policies to prevent avoidable denials</li>  
-  <li>Tracked procedure history and authorization timelines to maintain compliance with frequency and coverage limitations</li>  
-  <li>Conducted consistent payer follow-ups to secure timely determinations and prevent scheduling delays</li>  
-  <li>Managed authorization denials, appeals, retro authorizations, and peer-to-peer coordination with physicians and utilization management teams</li>  
-  <li>Processed medication prior authorizations using CoverMyMeds and payer-specific portals</li>  
-  <li>Served as the primary authorization point of contact for clinics, providers, and payer representatives to ensure uninterrupted procedure schedules</li>  
-</ul>  
-          </div>
-
-          <div class="job reveal">
-            <div class="job-head">
-              <div>
-                <h3>Customer Service Associate – US Health Insurance</h3>
-                <p class="meta">Highmark Blue Cross Blue Shield (Pennsylvania &amp; Delaware) • via Concentrix CVG</p>
-                <p class="meta">Remote | US Healthcare</p>
-              </div>
-              <span class="pill">December 2022 – May 2025</span>
-            </div>
-            <ul>  
-  <li>Supported US health insurance authorization, eligibility, and claims workflows for members and provider-facing inquiries</li>  
-  <li>Verified insurance eligibility, benefits, cost-sharing, and plan limitations to support accurate authorization and scheduling decisions</li>  
-  <li>Handled authorization status inquiries, claims follow-ups, and payer escalations in compliance with internal and regulatory guidelines</li>  
-  <li>Documented all interactions accurately within healthcare systems and payer platforms to maintain audit-ready records</li>  
-  <li>Maintained strict HIPAA compliance and data security standards across all member and provider communications</li>  
-  <li>Collaborated with providers, clinic staff, and payer representatives to resolve authorization and coverage issues efficiently</li>  
-</ul>  
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="section alt">
-      <div class="container">
-        <div class="section-head reveal center">
-          <p class="kicker">EXPERTISE</p>
-          <h2>Systems, Payers & Tools I Work With</h2>  
-        </div>
-
-        <div class="grid-2">
-          <div class="card big reveal">
-            <h3>EHR Systems</h3>
-            <ul class="list">
-              <li>eClinicalWorks (ECW)</li>
-            </ul>
-          </div>
-
-          <div class="card big reveal">
-            <h3>Payer &amp; Authorization Portals</h3>
-            <ul class="list">
-              <li>Availity</li>
-              <li>eviCore</li>
-              <li>Carelon</li>
-              <li>Cohere</li>
-              <li>Evolent</li>
-              <li>CoverMyMeds</li>
-              <li>Other payer-specific portals</li>
-            </ul>
-          </div>
-
-          <div class="card big reveal">
-            <h3>Insurance Experience</h3>
-            <ul class="list">
-              <li>Aetna</li>
-              <li>Cigna</li>
-              <li>Humana</li>
-              <li>BCBS(all state)</li>
-              <li>UnitedHealthcare</li>
-              <li>Medicaid (All States)</li>
-              <li>Medicare &amp; Medicare Advantage</li>
-              <li>All other major insurances across all 50 states</li>
-            </ul>
-          </div>
-
-          <div class="card big reveal">
-            <h3>Productivity &amp; Communication Tools</h3>
-            <ul class="list">
-              <li>Canva</li>
-              <li>Monitask</li>
-              <li>Azure OpenAi</li>
-              <li>RingCentral</li>
-              <li>Google Workspace (Sheets, Drive, Docs, Chat, Gmail)</li>
-              <li>Microsoft 365 (Excel, Powerpoint, Words, Outlook, Teams)</li>
-
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESULTS / CTA -->
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal center">
-          <p class="kicker">RESULTS</p>
-          <h2>What Pain Management Practices Achieve With Dedicated Prior Authorization Support</h2> 
-        </div>
-
-        <div class="grid-3">
-          <div class="card reveal"><p>Faster approvals for procedures and medications</p></div>
-          <div class="card reveal"><p>Fewer denials and rescheduled treatments</p></div>
-          <div class="card reveal"><p>Improved patient flow and scheduling efficiency</p></div>
-          <div class="card reveal"><p>Reduced administrative and billing delays</p></div>
-          <div class="card reveal"><p>Stronger revenue cycle performance</p></div>
-        </div>
-
-        <div class="cta reveal">
-          <h3>Ready to streamline prior authorizations for your pain management practice?</h3>
-          <p>Let me manage your insurance approvals so your team can focus on patient care.</p>
-          <a class="btn primary" href="#contact">Contact Me</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section alt">
-      <div class="container">
-        <div class="section-head reveal center">
-          <p class="kicker">GET IN TOUCH</p>
-          <h2>Let’s Work Together</h2>
-          <p class="muted">  
-I serve US-based pain management clinics remotely and align my work hours with US time zones  
-to ensure timely follow-ups and payer communication.
-          </p>  
-        </div>
-
-        <div class="contact reveal">
-          <div class="contact-box">
-            <h3>Contact Information</h3>
-
-            <div class="row">
-              <span>Email</span>
-              <a href="mailto:sample@gmail.com?subject=Prior%20Authorization%20Support%20Inquiry&body=Hi%20%2C%0A%0AI%27m%20reaching%20out%20about%20prior%20authorization%20support%20for%20our%20clinic.%0A%0AClinic%20Name%3A%20%0APayers%3A%20%0ATypical%20Procedures%3A%20%0AEHR%3A%20%0APreferred%20contact%20time%3A%20%0A%0AThanks%2C%0A">
-                sample@gmail.com
-              </a>
-            </div>
-
-            <div class="row">
-              <span>WhatsApp</span>
-              <a href="https://wa.me/639917706058" target="_blank" rel="noopener">+63 991 770 6058</a>
-            </div>
-
-            <div class="row">
-              <span>Location</span>
-              <strong>Cebu City, Philippines</strong>
-            </div>
-
-            <div class="row">
-              <span>Availability</span>
-              <strong>Remote | US Healthcare</strong>
-            </div>
-          </div>
-
-          <div class="contact-box">
-            <h3>Hire Me</h3>
-            <p class="muted">
-              I work remotely with US-based clinics and align my schedule with US time zones to ensure seamless communication and timely support.
-            </p>
-            </p>
-            
-            </p>
-            
-            </p>
-            
-            </p>
-            
-            </p>
-
-            <a class="btn primary full"
-               href="mailto:sample@gmail.com?subject=Prior%20Authorization%20Support%20Inquiry&body=Hi%20%2C%0A%0AI%27m%20reaching%20out%20about%20prior%20authorization%20support%20for%20our%20clinic.%0A%0AClinic%20Name%3A%20%0APayers%3A%20%0ATypical%20Procedures%3A%20%0AEHR%3A%20%0APreferred%20contact%20time%3A%20%0A%0AThanks%2C%0A">
-              Send an Email
-            </a>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-  <div class="container foot reveal">
-    <p class="foot-name">Your Name</p>
-    <p class="foot-meta">Prior Authorization Specialist</p>
-    <p class="foot-meta">Supporting US Healthcare Providers</p>
-
-    <!-- Social Icons -->
-    <div class="footer-social">  
-  
-  <!-- Email -->  
-  <a class="btn" href="mailto:sample@gmail.com?subject=Prior%20Authorization%20Support%20Inquiry">  
-    <i class="fa-solid fa-envelope"></i>  
-  </a>  
-  
-  <!-- WhatsApp -->  
-  <a href="https://wa.me/639917706058" target="_blank" rel="noopener" aria-label="WhatsApp">  
-    <i class="fa-brands fa-whatsapp"></i>  
-  </a>  
-  
-  <!-- LinkedIn -->  
-  <a href="https://www.linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn">  
-    <i class="fa-brands fa-linkedin-in"></i>  
-  </a>  
-  
-</div>  
-        <p class="foot-copy">
-      © <span id="year"></span> All rights reserved
-    </p>
-  </div>
 </footer>
-  </main>
 
- <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Scroll reveal
-  const items = document.querySelectorAll(".reveal");
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (e.isIntersecting) {
-        e.target.classList.add("in");
-        obs.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.14 });
-
-  items.forEach((el) => obs.observe(el));
-
-  // Nav shadow
-  const nav = document.getElementById("nav");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 8) nav.classList.add("scrolled");
-    else nav.classList.remove("scrolled");
-  });
-
-  // Image modal functions
-  function openImageModal(src) {
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-
-    modalImg.src = src;
-    modal.style.display = "flex";
-
-    requestAnimationFrame(() => {
-      modal.classList.add("show");
-    });
-  }
-
-  function closeImageModal() {
-    const modal = document.getElementById("imageModal");
-    modal.classList.remove("show");
-
-    setTimeout(() => {
-      modal.style.display = "none";
-    }, 300);
-  }
-
-  // ESC key close
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") {
-      closeImageModal();
-    }
-  });
-</script>
- <!-- Image Modal -->
-<div id="imageModal" class="image-modal" onclick="closeImageModal()">
-  <span class="modal-close">&times;</span>
-  <img id="modalImage" alt="Expanded profile photo" />
-</div>
-          <script>
-  // List of elements to track with Google Analytics
-  <script>
-  // List of elements to track with Google Analytics
-  <script>
-  // List of elements to track with Google Analytics
-  <!-- PROFILE CARDS / Buttons Section -->
-<div class="profile-card reveal">
-  <div class="profile-top">
-    <img
-      class="avatar"
-      src="profile-new.png"
-      alt="Van profile photo"
-      onclick="openImageModal(this.src)"
-    />
-    <div class="profile-text">
-      <h2>Your Name</h2>
-      <p class="role">Certified Medical Virtual Assistant</p>
-      <p class="subrole">Prior Authorization Specialist</p>
-    </div>
-  </div>
-
-  <div class="profile-cta">
-    <!-- Resume & Certificates -->
-    <a id="resumeBtn" class="btn small" href="Sample-Certificate.pdf" target="_blank" rel="noopener">Resume</a>
-    <a id="coeBtn" class="btn small" href="Sample-Certificate.pdf" target="_blank" rel="noopener">COE</a>
-    <a id="hipaaBtn" class="btn small" href="Sample-Certificate.pdf" target="_blank" rel="noopener">HIPAA Certificate</a>
-    <a id="medvaBtn" class="btn small" href="Sample-Certificate.pdf" target="_blank" rel="noopener">Medical VA Certificate</a>
-    <a id="complianceBtn" class="btn small" href="Sample-Certificate.pdf" target="_blank" rel="noopener">Healthcare Compliance</a>
-
-    <!-- Hire Me / Contact CTA -->
-    <a id="hireBtn" class="btn primary full" href="mailto:sample@gmail.com?subject=Prior%20Authorization%20Support%20Inquiry&body=Hi%20%2C%0A%0AI%27m%20reaching%20out%20about%20prior%20authorization%20support%20for%20our%20clinic.%0A%0AClinic%20Name%3A%20%0APayers%3A%20%0ATypical%20Procedures%3A%20%0AEHR%3A%20%0APreferred%20contact%20time%3A%20%0A%0AThanks%2C%0A">Send an Email</a>
-  </div>
-
-  <div class="profile-links">
-    <a id="contactEmail" class="link-chip" href="mailto:sample@gmail.com?subject=Prior%20Authorization%20Support%20Inquiry"><i class="fa-solid fa-envelope"></i> Email</a>
-    <a id="contactWhatsApp" class="link-chip" href="https://wa.me/639917706058" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-    <a id="contactLinkedIn" class="link-chip" href="https://www.linkedin.com/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
-  </div>
-
-  <div class="profile-info">
-    <div class="info-row">
-      <span>Location</span>
-      <strong>Cebu City, Philippines</strong>
-    </div>
-    <div class="info-row">
-      <span>Availability</span>
-      <strong>Remote | US Healthcare</strong>
-    </div>
-  </div>
-</div>
-
-<!-- ✅ Google Analytics Button Tracking Script -->
-<script>
-  const trackButtons = [
-    { selector: "#resumeBtn", label: "Resume Download" },
-    { selector: "#coeBtn", label: "COE Download" },
-    { selector: "#hipaaBtn", label: "HIPAA Certificate Download" },
-    { selector: "#medvaBtn", label: "Med-VA Certificate Download" },
-    { selector: "#complianceBtn", label: "Compliance Certificates Download" },
-    { selector: "#hireBtn", label: "Hire Me Button" },
-    { selector: "#contactEmail", label: "Email Click" },
-    { selector: "#contactWhatsApp", label: "WhatsApp Click" },
-    { selector: "#contactLinkedIn", label: "LinkedIn Click" }
-  ];
-
-  trackButtons.forEach(item => {
-    const el = document.querySelector(item.selector);
-    if(el){
-      el.addEventListener("click", function() {
-        gtag('event', 'click', {
-          'event_category': 'Engagement',
-          'event_label': item.label
-        });
-      });
-    }
-  });
-</script>
 </body>
 </html>
