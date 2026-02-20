@@ -3,368 +3,280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Erwin Bolhano | Dental Insurance Verification Specialist</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-
-/* GLOBAL */
-
+*{margin:0;padding:0;box-sizing:border-box;}
 body{
-font-family:'Inter', sans-serif;
-margin:0;
-background:#f4f7fb;
+font-family:'Inter',sans-serif;
+background:#f6f9fc;
 color:#1f2d3d;
+line-height:1.6;
 }
 
-section{
-padding:80px 20px;
-max-width:1000px;
+/* CONTAINER */
+.container{
+max-width:1100px;
 margin:auto;
-}
-
-h1,h2,h3{
-color:#0a3d62;
-}
-
-.btn{
-display:inline-block;
-background:#0a3d62;
-color:white;
-padding:14px 28px;
-border-radius:6px;
-text-decoration:none;
-font-weight:600;
-margin-top:20px;
-}
-
-.btn:hover{
-background:#062c47;
+padding:80px 20px;
 }
 
 /* HERO */
-
 .hero{
 background:white;
-padding:100px 20px;
 text-align:center;
+padding:120px 20px;
 }
 
 .hero h1{
-font-size:42px;
+font-size:48px;
+font-weight:800;
+color:#0a3d62;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:18px;
 max-width:700px;
 margin:auto;
-margin-top:20px;
+margin-bottom:30px;
 }
 
-/* FEATURES */
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-margin-top:40px;
+.btn{
+display:inline-block;
+background:#0a3d62;
+color:white;
+padding:14px 32px;
+border-radius:6px;
+text-decoration:none;
+font-weight:600;
 }
 
-.feature{
-background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.btn:hover{
+background:#062c47;
 }
 
-/* PROFILE */
+/* TRUST BAR */
+.trust{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:60px;
+flex-wrap:wrap;
+}
 
-.profile{
-background:white;
+.trust div{
+font-weight:600;
+color:#5c6b7a;
+}
+
+/* SECTION TITLE */
+h2{
+font-size:34px;
+font-weight:800;
+margin-bottom:30px;
+color:#0a3d62;
 text-align:center;
 }
 
-.profile img{
-width:180px;
-border-radius:50%;
-margin-bottom:20px;
-}
-
-/* SERVICES */
-
-.services{
+/* CARDS */
+.grid{
 display:grid;
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
 }
 
-.service{
+.card{
 background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+padding:30px;
+border-radius:12px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
 }
 
-/* EXPERIENCE */
-
-.job{
-background:white;
-padding:25px;
-border-radius:10px;
-margin-bottom:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.card h3{
+margin-bottom:15px;
+color:#0a3d62;
 }
 
-/* RESULTS */
-
+/* RESULTS SECTION */
 .results{
 background:#0a3d62;
 color:white;
 text-align:center;
-border-radius:10px;
-padding:60px 20px;
+padding:100px 20px;
 }
 
-/* CONTACT */
+.results h2{
+color:white;
+}
 
-.contact{
+.results-grid{
+display:flex;
+justify-content:center;
+gap:60px;
+flex-wrap:wrap;
+margin-top:40px;
+}
+
+.results-grid div{
+font-size:20px;
+font-weight:600;
+}
+
+/* EXPERIENCE */
+.job{
+background:white;
+padding:30px;
+border-radius:12px;
+margin-bottom:25px;
+box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+/* CTA */
+.cta{
 background:white;
 text-align:center;
+padding:100px 20px;
 }
 
+/* FOOTER */
 footer{
 text-align:center;
-padding:30px;
-color:#777;
+padding:40px;
+font-size:14px;
+color:#7b8a97;
 }
 
 </style>
-
 </head>
+
 <body>
 
 <!-- HERO -->
-
 <section class="hero">
 
 <h1>
-Dental Insurance Verification Support for Dental Practices
+Dental Insurance Verification & Claims Support Specialist
 </h1>
 
 <p>
-
-Helping dental clinics reduce claim delays, prevent denials, and improve insurance workflow efficiency.
-
+Helping dental practices reduce claim delays, improve insurance workflow accuracy, and prevent revenue loss caused by incomplete verification.
 </p>
 
 <a href="#contact" class="btn">
 Hire Me
 </a>
 
-<div class="features">
-
-<div class="feature">
-<h3>Faster Insurance Processing</h3>
-<p>Accurate insurance eligibility verification and documentation.</p>
+<div class="trust">
+<div>✔ 50+ Verifications Daily</div>
+<div>✔ 200+ Claims Weekly</div>
+<div>✔ Multi-Clinic Support</div>
+<div>✔ HIPAA-Compliant Workflow</div>
 </div>
-
-<div class="feature">
-<h3>Reduced Claim Denials</h3>
-<p>Correct submission and follow-up to prevent claim rejection.</p>
-</div>
-
-<div class="feature">
-<h3>HIPAA Compliant</h3>
-<p>Secure and confidential handling of patient data.</p>
-</div>
-
-<div class="feature">
-<h3>Remote Support</h3>
-<p>Available for US dental clinics and healthcare organizations.</p>
-</div>
-
-</div>
-
-</section>
-
-<!-- PROFILE -->
-
-<section class="profile">
-
-<img src="images/profile.jpg">
-
-<h2>Erwin Bolhano</h2>
-
-<p>
-Dental Insurance Verification Specialist  
-Philippines | Remote Support
-</p>
-
-</section>
-
-<!-- ABOUT -->
-
-<section>
-
-<h2>About Me</h2>
-
-<p>
-
-I support dental clinics with insurance verification, claims follow-up, and documentation management.  
-I currently verify 50+ patients daily and manage 200+ insurance claims weekly across multiple dental clinics.
-
-</p>
 
 </section>
 
 <!-- SERVICES -->
+<section class="container">
 
-<section>
+<h2>How I Support Dental Clinics</h2>
 
-<h2>Services</h2>
+<div class="grid">
 
-<div class="services">
-
-<div class="service">
-
+<div class="card">
 <h3>Insurance Eligibility Verification</h3>
-
 <p>
-Verify insurance benefits, limitations, and patient responsibility.
+Confirm coverage, frequency limitations, downgrades, missing tooth clauses, waiting periods, and patient responsibility before appointments.
 </p>
-
 </div>
 
-<div class="service">
-
-<h3>Claims Follow-Up</h3>
-
+<div class="card">
+<h3>Claims Follow-Up & Aging Control</h3>
 <p>
-Track claims and communicate with insurance providers.
+Track insurance claims, follow up with carriers, and reduce outstanding receivables to improve cash flow.
 </p>
-
 </div>
 
-<div class="service">
-
-<h3>Insurance Coordination</h3>
-
+<div class="card">
+<h3>Insurance Breakdown Accuracy</h3>
 <p>
-Handle insurance inquiries and resolve coverage issues.
+Provide detailed benefit breakdowns for front desk teams to prevent billing surprises and resubmissions.
 </p>
-
 </div>
 
-<div class="service">
-
-<h3>Administrative Support</h3>
-
+<div class="card">
+<h3>Administrative Workflow Support</h3>
 <p>
-Provide documentation and workflow support for dental clinics.
+Update patient charts, document notes accurately, and maintain organized insurance records across systems.
 </p>
-
 </div>
-
-</div>
-
-</section>
-
-<!-- EXPERIENCE -->
-
-<section>
-
-<h2>Experience</h2>
-
-<div class="job">
-
-<h3>
-Insurance Verification Specialist
-</h3>
-
-<p>
-TOA Global | 2024 – Present
-</p>
-
-<ul>
-
-<li>Verify insurance for 50+ patients daily</li>
-<li>Manage 200+ claims weekly</li>
-<li>Support multiple dental clinics</li>
-
-</ul>
-
-</div>
-
-<div class="job">
-
-<h3>
-Healthcare Executive
-</h3>
-
-<p>
-Firstsource Solutions | 2022 – 2024
-</p>
-
-<ul>
-
-<li>Handled insurance verification</li>
-<li>Managed claims follow-ups</li>
-
-</ul>
 
 </div>
 
 </section>
 
 <!-- RESULTS -->
-
 <section class="results">
 
-<h2>
-Results Clinics Achieve Working With Me
-</h2>
+<h2>Results Dental Clinics Achieve</h2>
 
-<p>
-
-Faster insurance verification  
-Reduced claim delays  
-Improved workflow efficiency  
-
-</p>
+<div class="results-grid">
+<div>Fewer Claim Denials</div>
+<div>Faster Insurance Confirmation</div>
+<div>Improved Revenue Cycle Flow</div>
+</div>
 
 </section>
 
-<!-- CONTACT -->
+<!-- EXPERIENCE -->
+<section class="container">
 
-<section id="contact" class="contact">
+<h2>Professional Experience</h2>
 
-<h2>
-Contact Me
-</h2>
+<div class="job">
+<h3>Insurance Verification Specialist</h3>
+<p><strong>TOA Global – South Hills Dental Arts</strong> | 2024 – Present</p>
+<ul>
+<li>Verify insurance eligibility for 50+ patients daily.</li>
+<li>Manage 200+ insurance claims weekly.</li>
+<li>Support 5 dental clinic locations remotely.</li>
+<li>Maintain ~99% documentation accuracy.</li>
+</ul>
+</div>
+
+<div class="job">
+<h3>Healthcare Executive</h3>
+<p><strong>Firstsource Solutions Ltd.</strong> | 2022 – 2024</p>
+<ul>
+<li>Handled high-volume healthcare insurance calls.</li>
+<li>Managed eligibility, claims inquiries, and authorization checks.</li>
+<li>Communicated directly with US insurance providers.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- CTA -->
+<section id="contact" class="cta">
+
+<h2>Available for Remote Dental Insurance Roles</h2>
 
 <p>
-Email: erwinjade24@gmail.com
+Open to supporting US-based dental clinics with insurance verification and claims management.
 </p>
 
-<p>
-Phone: +639243733050
-</p>
-
-<p>
-LinkedIn: linkedin.com/in/zcxwin
-</p>
+<br>
 
 <a href="mailto:erwinjade24@gmail.com" class="btn">
-Send Email
+Contact Me
 </a>
 
 </section>
 
 <footer>
-
-© 2026 Erwin Bolhano
-
+© 2026 Erwin Bolhano | Dental Insurance Verification Specialist
 </footer>
 
 </body>
