@@ -21,7 +21,7 @@
 body{font-family:Inter,sans-serif;color:var(--text);background:#f9fbfc;}
 .container{max-width:1150px;margin:auto;padding:0 20px;}
 section{padding:80px 0;}
-h1,h2{font-family:'Playfair Display',serif;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
 .section-label{text-align:center;font-size:13px;letter-spacing:2px;color:var(--primary);font-weight:600;margin-bottom:10px;}
 .section-title{text-align:center;font-size:36px;margin-bottom:20px;}
 .section-description{text-align:center;max-width:800px;margin:0 auto 20px;color:var(--muted);line-height:1.7;}
@@ -29,6 +29,8 @@ h1,h2{font-family:'Playfair Display',serif;}
 .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:30px;}
 .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:40px;}
+.result-box{background:#fff;border:1px solid var(--border);padding:20px;border-radius:14px;text-align:center;font-weight:500;color:#374151;}
 ul{padding-left:18px;color:#4b5563;}
 li{margin-bottom:8px;line-height:1.6;}
 
@@ -43,11 +45,13 @@ li{margin-bottom:8px;line-height:1.6;}
 .mini-card h4{margin-bottom:6px;font-size:15px;}
 .mini-card p{font-size:14px;color:var(--muted);}
 
+.cta-box{margin-top:50px;background:#eaf4f6;border:1px solid #cde4e8;border-radius:16px;padding:40px;text-align:center;}
+
 .footer{background:linear-gradient(to right,#08363f,#021f26);color:#fff;text-align:center;padding:60px 20px;}
 .footer p{opacity:.85;margin-top:6px;}
 
 @media(max-width:992px){
-.hero-grid,.grid-2,.grid-4{grid-template-columns:1fr;}
+.hero-grid,.grid-2,.grid-4,.results-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -81,8 +85,8 @@ From scheduled appointments to emergency visits and walk-in patients, I ensure b
 <div class="card" style="text-align:center;">
 <img src="image/profile.jpg" alt="Erwin Bolhano" style="width:160px;border-radius:12px;margin-bottom:15px;">
 <h3>Erwin Bolhano</h3>
-<p class="company">Dental Insurance & Billing Support Specialist</p>
-<p class="company" style="margin-top:15px;">
+<p>Dental Insurance & Billing Support Specialist</p>
+<p style="margin-top:15px;color:var(--muted);">
 <strong>Location:</strong> Cebu City, Philippines<br>
 <strong>Availability:</strong> Remote | U.S. Dental Practices
 </p>
@@ -198,6 +202,32 @@ I support dental offices by ensuring insurance eligibility is verified accuratel
 </div>
 
 </div>
+</div>
+</section>
+
+<!-- RESULTS -->
+<section style="background:var(--lighter);">
+<div class="container">
+<p class="section-label">RESULTS</p>
+<h2 class="section-title">What Dental Practices Achieve</h2>
+
+<div class="results-grid">
+<div class="result-box">Faster claim status resolutions</div>
+<div class="result-box">Reduced claims aging backlog</div>
+<div class="result-box">Accurate insurance verification</div>
+<div class="result-box">Fewer billing discrepancies</div>
+<div class="result-box">Improved cash flow consistency</div>
+<div class="result-box">Less administrative workload for staff</div>
+</div>
+
+<div class="cta-box">
+<h3>Ready to streamline your dental insurance workflow?</h3>
+<p style="margin:15px 0;color:var(--muted);">
+Let me handle insurance verification and claims aging follow-ups so your team can focus on patient care and production.
+</p>
+<a href="mailto:sample@gmail.com" class="btn">Contact Me</a>
+</div>
+
 </div>
 </section>
 
